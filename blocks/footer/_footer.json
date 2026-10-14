@@ -1,0 +1,73 @@
+{
+  "definitions": [
+    {
+      "title": "Footer",
+      "id": "footer",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/footer/v1/footer",
+            "template": {
+              "name": "Footer",
+              "model": "footer"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "footer",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "brandName",
+          "label": "Brand Name",
+          "value": "umbría"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "purpose",
+          "label": "Purpose",
+          "value": "Un espacio para entender la energía y cuidar lo que nos mantiene vivos."
+        },
+        {
+          "component": "links",
+          "valueType": "array",
+          "name": "socialLinks",
+          "label": "Social Links",
+          "value": [
+            { "type": "instagram", "url": "#" },
+            { "type": "linkedin", "url": "#" },
+            { "type": "email", "url": "#" }
+          ]
+        },
+        {
+          "component": "links",
+          "valueType": "array",
+          "name": "exploreLinks",
+          "label": "Explore Links",
+          "value": [
+            { "text": "Energía solar", "url": "#" },
+            { "text": "Energía eólica", "url": "#" },
+            { "text": "Mitos y realidades", "url": "#" }
+          ]
+        },
+        {
+          "component": "links",
+          "valueType": "array",
+          "name": "actionLinks",
+          "label": "Action Links",
+          "value": [
+            { "text": "Guías prácticas", "url": "#" },
+            { "text": "Calcula tu impacto", "url": "#" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
