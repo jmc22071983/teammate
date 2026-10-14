@@ -21,7 +21,7 @@
 }
 
 .hero2 p {
-  color: rgba(174, 189, 176, 1);
+  color: rgb(174 189 176 / 100%);
   font-family: var(--body-font-family);
   font-weight: 400;
   font-size: 18px;
