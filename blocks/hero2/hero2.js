@@ -11,7 +11,7 @@ export default function decorate(block) {
 
   if (text) {
     text.style.color = 'var(--background-color)';
-    text.style.fontFamily = 'Fraunces';
+    text.style.fontFamily = 'var(--heading-font-family)';
     text.style.fontWeight = '600';
     text.style.fontSize = '78px';
     text.style.lineHeight = '104%';
@@ -19,7 +19,7 @@ export default function decorate(block) {
 
   if (intro) {
     intro.style.color = 'rgba(174, 189, 176, 1)';
-    intro.style.fontFamily = 'Inter';
+    intro.style.fontFamily = 'var(--body-font-family)';
     intro.style.fontWeight = '400';
     intro.style.fontSize = '18px';
     intro.style.lineHeight = '150%';
