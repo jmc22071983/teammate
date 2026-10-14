@@ -1,0 +1,34 @@
+{
+  "definitions": [
+    {
+      "title": "Text",
+      "id": "text",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/text/v1/text",
+            "template": {
+              "name": "Text",
+              "model": "text"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "text",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "text",
+          "label": "Text",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
