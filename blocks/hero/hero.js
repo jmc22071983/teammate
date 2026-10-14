@@ -1,10 +1,15 @@
 export default function decorate(block) {
   const image = block.querySelector('img');
   if (image) {
-    image.setAttribute('alt', 'Hero banner desde Figma');
-    image.style.objectFit = 'cover';
-    image.style.width = '100%';
-    image.style.height = '100%';
+    const picture = document.createElement('picture');
+    picture.style.position = 'absolute';
+    picture.style.zIndex = '-1';
+    picture.style.inset = '0';
+    picture.style.objectFit = 'cover';
+    picture.style.width = '100%';
+    picture.style.height = '100%';
+    picture.appendChild(image);
+    block.prepend(picture);
   }
 
   const text = block.querySelector('h1');
