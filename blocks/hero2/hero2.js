@@ -41,3 +41,4 @@ export default function decorate(block) {
   block.style.minHeight = '662px';
   block.style.backgroundColor = '#000000';
 }
+// Ajuste menor: comentario añadido para forzar el push
