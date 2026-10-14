@@ -7,7 +7,7 @@
   position: relative;
   padding: 40px 24px;
   min-height: 300px;
-  background-color: #000000;
+  background-color: #000;
 }
 
 .hero h1 {
@@ -15,7 +15,7 @@
   margin-left: auto;
   margin-right: auto;
   color: #F5F1E5;
-  font-family: "Fraunces", serif;
+  font-family: Fraunces, serif;
   font-size: 78px;
   line-height: 104%;
 }
