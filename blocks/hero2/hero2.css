@@ -1,0 +1,36 @@
+.hero2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero2-title {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hero2-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+}
+
+.hero2-button {
+  background-color: #ff9966;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero2-button:hover {
+  background-color: #ff7744;
+}
