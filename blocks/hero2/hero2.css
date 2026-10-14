@@ -14,7 +14,7 @@
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
-  font-family: 'Fraunces';
+  font-family: var(--heading-font-family);
   font-weight: 600;
   font-size: 78px;
   line-height: 104%;
@@ -22,7 +22,7 @@
 
 .hero2 p {
   color: rgba(174, 189, 176, 1);
-  font-family: 'Inter';
+  font-family: var(--body-font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
