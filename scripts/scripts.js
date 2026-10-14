@@ -10,6 +10,7 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+import personalize from './personalization.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -164,6 +165,10 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  // Sin await: no bloquea loadPage() - el h1 se actualiza en cuanto responda Target,
+  // antes que si se esperara a la fase "delayed" (3s fijos, ver loadDelayed).
+  personalize();
 }
 
 /**
