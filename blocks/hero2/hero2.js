@@ -1,6 +1,10 @@
 export default function decorate(block) {
-  const rows = [...block.children];
-  const [contentRow, imageRow] = rows;
+  const [imageRow, contentRow] = [...block.children];
+
+  if (imageRow) {
+    const picture = imageRow.querySelector('picture');
+    if (picture) picture.classList.add('image');
+  }
 
   if (contentRow) {
     const [headline, intro, cta, secondaryLink, note] = [...contentRow.children];
@@ -9,10 +13,5 @@ export default function decorate(block) {
     if (cta) cta.classList.add('cta');
     if (secondaryLink) secondaryLink.classList.add('secondary-link');
     if (note) note.classList.add('note');
-  }
-
-  if (imageRow) {
-    const picture = imageRow.querySelector('picture');
-    if (picture) picture.classList.add('image');
   }
 }
