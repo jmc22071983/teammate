@@ -190,6 +190,167 @@
     ]
   },
   {
+    "id": "hero2",
+    "fields": [
+      {
+        "component": "group",
+        "name": "content",
+        "label": "Content",
+        "fields": [
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "subheadline",
+            "label": "Subheadline"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "headline",
+            "label": "Headline"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "intro",
+            "label": "Intro"
+          },
+          {
+            "component": "group",
+            "name": "cta",
+            "label": "Call to Actions",
+            "fields": [
+              {
+                "component": "aem-content",
+                "valueType": "string",
+                "name": "primaryCta",
+                "label": "Primary CTA"
+              },
+              {
+                "component": "text",
+                "valueType": "string",
+                "name": "primaryCtaText",
+                "label": "Primary CTA Text"
+              },
+              {
+                "component": "aem-content",
+                "valueType": "string",
+                "name": "secondaryCta",
+                "label": "Secondary CTA"
+              },
+              {
+                "component": "text",
+                "valueType": "string",
+                "name": "secondaryCtaText",
+                "label": "Secondary CTA Text"
+              }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "editorialNote",
+            "label": "Editorial Note"
+          },
+          {
+            "component": "group",
+            "name": "imageGroup",
+            "label": "Image Group",
+            "fields": [
+              {
+                "component": "reference",
+                "valueType": "string",
+                "name": "image",
+                "label": "Image",
+                "multi": false
+              },
+              {
+                "component": "text",
+                "valueType": "string",
+                "name": "imageAlt",
+                "label": "Image Alt Text"
+              },
+              {
+                "component": "text",
+                "valueType": "string",
+                "name": "caption",
+                "label": "Image Caption"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hero3",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content_headline",
+        "value": "",
+        "label": "Headline",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content_intro",
+        "value": "",
+        "label": "Introduction",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "content_cta",
+        "label": "CTA",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "content_secondaryLink",
+        "label": "Secondary Link",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "meta_editorialNote",
+        "label": "Editorial Note",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "meta_imageCaption",
+        "label": "Image Caption",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
@@ -212,85 +373,6 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "hero2",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "subheadline",
-        "label": "Subheadline"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "headline",
-        "label": "Headline"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "intro",
-        "label": "Intro"
-      },
-      {
-        "component": "group",
-        "name": "cta",
-        "label": "Call to Actions",
-        "fields": [
-          {
-            "component": "aem-content",
-            "valueType": "string",
-            "name": "primaryCta",
-            "label": "Primary CTA"
-          },
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "primaryCtaText",
-            "label": "Primary CTA Text"
-          },
-          {
-            "component": "aem-content",
-            "valueType": "string",
-            "name": "secondaryCta",
-            "label": "Secondary CTA"
-          },
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "secondaryCtaText",
-            "label": "Secondary CTA Text"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "editorialNote",
-        "label": "Editorial Note"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt Text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "caption",
-        "label": "Image Caption"
       }
     ]
   }
