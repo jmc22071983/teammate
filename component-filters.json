@@ -2,6 +2,7 @@
   "id": "section",
   "components": [
     "hero4",
-    "b-hero1"
+    "b-hero1",
+    "b-hero2"
   ]
 }]

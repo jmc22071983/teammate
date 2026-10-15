@@ -96,4 +96,57 @@
       "label": "Secondary Button Text"
     }
   ]
+},
+{
+  "id": "b-hero2",
+  "fields": [
+    {
+      "component": "reference",
+      "valueType": "string",
+      "name": "image",
+      "label": "Image",
+      "multi": false
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "imageAlt",
+      "label": "Alt",
+      "value": ""
+    },
+    {
+      "component": "group",
+      "name": "content",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle",
+          "value": ""
+        },
+        {
+          "component": "link",
+          "valueType": "string",
+          "name": "primaryCta",
+          "label": "Primary CTA",
+          "value": ""
+        },
+        {
+          "component": "link",
+          "valueType": "string",
+          "name": "secondaryCta",
+          "label": "Secondary CTA",
+          "value": ""
+        }
+      ]
+    }
+  ]
 }]
