@@ -1,55 +1,96 @@
 .hero3 {
   position: relative;
-  padding: 88px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px 24px;
   min-height: 300px;
-  background-color: #F70;
+  background: linear-gradient(135deg, #2a0b4a 0%, #12071f 43%, #3a1200 71%);
+}
+
+.hero3-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 40px 0;
+  box-shadow: 0 3px 46px 0 rgb(0 0 0 / 14%);
 }
 
 .hero3 h1 {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #FFF;
-  font-family: Poppins, sans-serif;
-  font-size: 48px;
-  line-height: 72px;
+  max-width: 1200px;
+  margin: 0;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 32px;
+  letter-spacing: 0.02em;
   text-align: center;
+  color: #fff;
 }
 
 .hero3 h2 {
-  max-width: 800px;
-  margin: 16px auto 0;
-  color: #FFF;
-  font-family: Poppins, sans-serif;
-  font-size: 24px;
-  line-height: 36px;
+  max-width: 1000px;
+  margin: 0;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 20px;
+  letter-spacing: 0.04em;
   text-align: center;
+  color: #fff;
+}
+
+.hero3-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
 .hero3 .cta,
 .hero3 .secondary-cta {
   display: inline-block;
-  margin: 16px 8px 0;
   padding: 12px 24px;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 17px;
   text-decoration: none;
   border-radius: 160px;
-  font-family: Poppins, sans-serif;
-  font-size: 17px;
-  line-height: 24px;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%);
 }
 
 .hero3 .cta {
-  background-color: #FFF;
-  color: #F70;
+  background-color: #ff7a00;
+  color: #12071f;
+}
+
+.hero3 .cta:hover {
+  background-color: #e66e00;
 }
 
 .hero3 .secondary-cta {
-  background-color: transparent;
-  color: #FFF;
-  border: 2px solid #FFF;
+  background-color: #2a0b4a;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
-@media (min-width: 900px) {
+.hero3 .secondary-cta:hover {
+  background-color: #3a1260;
+}
+
+@media (width >= 900px) {
   .hero3 {
-    padding: 88px 32px;
+    padding: 40px 32px;
+  }
+
+  .hero3-content {
+    padding: 80px 0;
+  }
+
+  .hero3 h1 {
+    font-size: 48px;
+  }
+
+  .hero3 h2 {
+    font-size: 24px;
   }
 }
