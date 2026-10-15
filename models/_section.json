@@ -51,7 +51,8 @@
         "cards",
         "columns",
         "fragment",
-        "b-cards"
+        "b-cards",
+        "banner"
       ]
     }
   ]

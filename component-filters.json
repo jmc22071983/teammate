@@ -16,7 +16,14 @@
       "cards",
       "columns",
       "fragment",
-      "b-cards"
+      "b-cards",
+      "banner"
+    ]
+  },
+  {
+    "id": "b-cards",
+    "components": [
+      "b-card-item"
     ]
   },
   {
@@ -38,12 +45,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "b-cards",
-    "components": [
-      "b-card-item"
     ]
   }
 ]

@@ -1,0 +1,167 @@
+.banner-container .banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.banner-container {
+  margin: 0;
+}
+
+.banner-container .banner-wrapper > .block.banner {
+  max-width: unset;
+  padding: 0;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: 480px;
+  padding: 80px 24px;
+  background: linear-gradient(135deg, #ff7a00 0%, #b53a00 60%, #2a0b4a 100%);
+}
+
+.banner > div {
+  width: 100%;
+}
+
+.banner .banner-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.banner .banner-image picture,
+.banner .banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.banner .banner-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.banner .banner-image img {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.18;
+}
+
+.banner .banner-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 640px;
+  color: #fff;
+}
+
+.banner .banner-text {
+  width: 100%;
+}
+
+.banner .banner-title {
+  margin: 0;
+  color: #fff;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.banner .banner-copy {
+  margin: 24px 0 0;
+  color: #fff;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.banner .banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.banner .banner-actions .button-wrapper {
+  margin: 0;
+}
+
+.banner .banner-actions .button {
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.banner .banner-actions .button.primary {
+  border-color: #fff;
+  background-color: #fff;
+  color: #120720;
+}
+
+.banner .banner-actions .button.primary:hover,
+.banner .banner-actions .button.primary:focus-visible {
+  border-color: #120720;
+  background-color: #120720;
+  color: #fff;
+}
+
+.banner .banner-actions .button.secondary {
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.banner .banner-actions .button.secondary:hover,
+.banner .banner-actions .button.secondary:focus-visible {
+  border-color: #fff;
+  background-color: rgb(255 255 255 / 12%);
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .banner {
+    padding: 80px;
+  }
+}
+
+@media (width < 900px) {
+  .banner {
+    min-height: 420px;
+    padding: 64px 24px;
+  }
+
+  .banner .banner-title {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  .banner .banner-copy {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .banner .banner-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .banner .banner-actions .button-wrapper,
+  .banner .banner-actions .button {
+    width: 100%;
+  }
+}
