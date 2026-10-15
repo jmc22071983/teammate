@@ -1,0 +1,54 @@
+.b-hero2 {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.b-hero2 h1 {
+  font-family: Poppins, sans-serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.b-hero2 p {
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.b-hero2 .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.b-hero2 .button-primary,
+.b-hero2 .button-secondary {
+  font-family: Poppins, sans-serif;
+  font-size: 17px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.b-hero2 .button-primary {
+  background-color: var(--cta-color);
+  color: var(--background-color);
+}
+
+.b-hero2 .button-secondary {
+  background-color: transparent;
+  color: var(--cta-color);
+  border: 2px solid var(--cta-color);
+}
+
+@media (min-width: 900px) {
+  .b-hero2 {
+    padding: 40px 32px;
+  }
+}
