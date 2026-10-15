@@ -2,13 +2,13 @@
   position: relative;
   padding: 88px 24px;
   min-height: 300px;
-  background-color: #FF7A00;
+  background-color: #F70;
 }
 
 .hero3 h1 {
   max-width: 800px;
   margin: 0 auto;
-  color: #FFFFFF;
+  color: #FFF;
   font-family: Poppins, sans-serif;
   font-size: 48px;
   line-height: 72px;
@@ -18,7 +18,7 @@
 .hero3 h2 {
   max-width: 800px;
   margin: 16px auto 0;
-  color: #FFFFFF;
+  color: #FFF;
   font-family: Poppins, sans-serif;
   font-size: 24px;
   line-height: 36px;
@@ -38,17 +38,17 @@
 }
 
 .hero3 .cta {
-  background-color: #FFFFFF;
-  color: #FF7A00;
+  background-color: #FFF;
+  color: #F70;
 }
 
 .hero3 .secondary-cta {
   background-color: transparent;
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  color: #FFF;
+  border: 2px solid #FFF;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   .hero3 {
     padding: 88px 32px;
   }
