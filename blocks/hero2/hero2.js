@@ -20,6 +20,7 @@ export default function decorate(block) {
   if (imageRow) {
     imageRow.classList.add('image');
     const [image, caption] = [...imageRow.children];
+    if (image) image.classList.add('image-element');
     if (caption) caption.classList.add('caption');
   }
 }
