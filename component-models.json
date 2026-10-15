@@ -179,43 +179,6 @@
     ]
   },
   {
-    "id": "b-hero",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "subtitle",
-        "label": "Subtitle"
-      },
-      {
-        "component": "aem-content",
-        "name": "primaryCta",
-        "label": "Primary CTA"
-      },
-      {
-        "component": "text",
-        "name": "primaryCtaText",
-        "label": "Primary CTA Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "secondaryCta",
-        "label": "Secondary CTA"
-      },
-      {
-        "component": "text",
-        "name": "secondaryCtaText",
-        "label": "Secondary CTA Text"
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
