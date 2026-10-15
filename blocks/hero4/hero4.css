@@ -1,0 +1,51 @@
+.hero4-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+.hero4-container h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 78px;
+  line-height: 1.1;
+  color: #f39c12;
+}
+
+.hero4-container .intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #bdc3c7;
+  margin-top: 20px;
+}
+
+.hero4-container .cta {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.hero4-container .cta a {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  background-color: #f39c12;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.hero4-container .cta a:hover {
+  background-color: #e67e22;
+}
+
+.hero4-container .cta .icon {
+  margin-left: 10px;
+  width: 18px;
+  height: 18px;
+  fill: #2c3e50;
+}
