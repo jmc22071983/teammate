@@ -1,0 +1,26 @@
+{
+  "name": "b-hero",
+  "displayName": "Hero Banner",
+  "elements": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Título"
+    },
+    {
+      "name": "subtitle",
+      "type": "text",
+      "label": "Subtítulo"
+    },
+    {
+      "name": "primaryButtonText",
+      "type": "text",
+      "label": "Texto del Botón Primario"
+    },
+    {
+      "name": "secondaryButtonText",
+      "type": "text",
+      "label": "Texto del Botón Secundario"
+    }
+  ]
+}
