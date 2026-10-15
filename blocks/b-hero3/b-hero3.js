@@ -6,8 +6,8 @@ export default function decorate(block) {
   const subtitle = subtitleRow.textContent;
   const buttons = [...buttonsRow.querySelectorAll('a')];
 
-  const primaryButton = buttons.find(btn => btn.classList.contains('button-primary'));
-  const secondaryButton = buttons.find(btn => btn.classList.contains('button-secondary'));
+  const primaryButton = buttons.find((btn) => btn.classList.contains('button-primary'));
+  const secondaryButton = buttons.find((btn) => btn.classList.contains('button-secondary'));
 
   block.innerHTML = `
     <div class="b-hero3">
