@@ -190,6 +190,84 @@
     ]
   },
   {
+    "id": "hero2",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content_headline",
+        "label": "Headline",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content_intro",
+        "label": "Introduction",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "name": "content_cta",
+        "label": "CTA Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "content_ctaText",
+        "label": "CTA Text",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "name": "content_secondary",
+        "label": "Secondary Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "content_secondaryText",
+        "label": "Secondary Link Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "meta_editorialNote",
+        "label": "Editorial Note",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "meta_caption",
+        "label": "Image Caption",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
