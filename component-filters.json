@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "b-cards"
     ]
   },
   {
@@ -37,6 +38,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "b-cards",
+    "components": [
+      "b-card-item"
     ]
   }
 ]
