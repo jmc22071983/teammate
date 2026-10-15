@@ -324,18 +324,6 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "subtitle",
-        "label": "Subtitle"
-      },
-      {
-        "component": "link",
-        "valueType": "string",
         "name": "primaryCta",
         "label": "Primary CTA"
       },
@@ -346,7 +334,7 @@
         "label": "Primary CTA Text"
       },
       {
-        "component": "link",
+        "component": "text",
         "valueType": "string",
         "name": "secondaryCta",
         "label": "Secondary CTA"
