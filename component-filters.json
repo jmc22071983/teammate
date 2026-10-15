@@ -17,14 +17,7 @@
       "cards",
       "columns",
       "fragment",
-      "b-cards",
       "banner"
-    ]
-  },
-  {
-    "id": "b-cards",
-    "components": [
-      "b-card-item"
     ]
   },
   {
