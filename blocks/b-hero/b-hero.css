@@ -1,0 +1,224 @@
+.b-hero-container .b-hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.b-hero-container {
+  margin: 0;
+}
+
+.b-hero-container .b-hero-wrapper > .block.b-hero {
+  max-width: unset;
+  padding: 0;
+}
+
+.b-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 480px;
+  padding: 80px 24px;
+  background: linear-gradient(135deg, #2a0b4a 0%, #120720 60%, #3a1200 100%);
+}
+
+.b-hero-stage,
+.b-hero-content {
+  width: 100%;
+}
+
+.b-hero-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.b-hero-stage > div {
+  position: absolute;
+}
+
+.b-hero-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.b-hero-moon {
+  top: 30px;
+  right: 60px;
+  width: 150px;
+}
+
+.b-hero-pumpkin {
+  right: 40px;
+  bottom: 20px;
+  width: 230px;
+}
+
+.b-hero-bat-primary {
+  top: 40px;
+  left: 40px;
+  width: 150px;
+}
+
+.b-hero-bat-secondary {
+  top: 130px;
+  left: 200px;
+  width: 100px;
+}
+
+.b-hero-card {
+  left: 60px;
+  bottom: 60px;
+  width: min(180px, 22vw);
+}
+
+.b-hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.b-hero-text {
+  width: 100%;
+}
+
+.b-hero-title {
+  margin: 0;
+  color: #fff;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.b-hero-copy {
+  max-width: 800px;
+  margin: 24px 0 0;
+  color: #fff;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.b-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.b-hero-actions .button-wrapper {
+  margin: 0;
+}
+
+.b-hero-actions .button {
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.b-hero-actions .button.primary {
+  border-color: #ff7a00;
+  background-color: #ff7a00;
+  color: #120720;
+}
+
+.b-hero-actions .button.primary:hover,
+.b-hero-actions .button.primary:focus-visible {
+  border-color: #b53a00;
+  background-color: #b53a00;
+  color: #fff;
+}
+
+.b-hero-actions .button.secondary {
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.b-hero-actions .button.secondary:hover,
+.b-hero-actions .button.secondary:focus-visible {
+  border-color: #fff;
+  background-color: rgb(255 255 255 / 12%);
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .b-hero {
+    padding: 80px;
+  }
+}
+
+@media (width < 900px) {
+  .b-hero {
+    min-height: 420px;
+    padding: 64px 24px;
+  }
+
+  .b-hero-moon {
+    top: 24px;
+    right: 24px;
+    width: 96px;
+  }
+
+  .b-hero-pumpkin {
+    right: 16px;
+    bottom: 16px;
+    width: 140px;
+  }
+
+  .b-hero-bat-primary {
+    top: 24px;
+    left: 16px;
+    width: 96px;
+  }
+
+  .b-hero-bat-secondary {
+    top: 84px;
+    left: 96px;
+    width: 72px;
+  }
+
+  .b-hero-card {
+    left: 24px;
+    bottom: 24px;
+    width: 120px;
+  }
+
+  .b-hero-title {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  .b-hero-copy {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .b-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .b-hero-actions .button-wrapper,
+  .b-hero-actions .button {
+    width: 100%;
+  }
+}
