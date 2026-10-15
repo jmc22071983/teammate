@@ -35,56 +35,63 @@
           "value": ""
         },
         {
-          "component": "richtext",
-          "name": "headline",
-          "label": "Headline",
-          "valueType": "string"
-        },
-        {
-          "component": "richtext",
-          "name": "intro",
-          "label": "Introduction",
-          "valueType": "string"
-        },
-        {
           "component": "group",
-          "name": "cta",
-          "label": "Call to Action",
+          "name": "content",
+          "label": "Content",
           "fields": [
             {
-              "component": "aem-content",
-              "name": "ctaLink",
-              "label": "Link"
+              "component": "richtext",
+              "name": "headline",
+              "label": "Headline",
+              "valueType": "string"
+            },
+            {
+              "component": "richtext",
+              "name": "intro",
+              "label": "Introduction",
+              "valueType": "string"
+            },
+            {
+              "component": "group",
+              "name": "cta",
+              "label": "Call to Action",
+              "fields": [
+                {
+                  "component": "aem-content",
+                  "name": "ctaLink",
+                  "label": "Link"
+                },
+                {
+                  "component": "text",
+                  "name": "ctaText",
+                  "label": "Text"
+                }
+              ]
+            },
+            {
+              "component": "group",
+              "name": "secondaryLink",
+              "label": "Secondary Link",
+              "fields": [
+                {
+                  "component": "aem-content",
+                  "name": "link",
+                  "label": "Link"
+                },
+                {
+                  "component": "text",
+                  "name": "linkText",
+                  "label": "Text"
+                }
+              ]
             },
             {
               "component": "text",
-              "name": "ctaText",
-              "label": "Text"
+              "name": "editorialNote",
+              "label": "Editorial Note",
+              "valueType": "string"
             }
           ]
-        },
-        {
-          "component": "group",
-          "name": "secondaryLink",
-          "label": "Secondary Link",
-          "fields": [
-            {
-              "component": "aem-content",
-              "name": "link",
-              "label": "Link"
-            },
-            {
-              "component": "text",
-              "name": "linkText",
-              "label": "Text"
-            }
-          ]
-        },
-        {
-          "component": "text",
-          "name": "editorialNote",
-          "label": "Editorial Note",
-          "valueType": "string"
         }
       ]
     }
