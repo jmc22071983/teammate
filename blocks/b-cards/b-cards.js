@@ -13,30 +13,37 @@ function createHeader(row) {
   const wrapper = document.createElement('div');
   wrapper.className = 'b-cards-header';
 
-  const [eyebrow, title, cta] = [...row.children];
+  const link = row.querySelector('a');
+  const heading = row.querySelector('h1, h2, h3, h4, h5, h6');
+  const textNodes = [...row.childNodes]
+    .filter((node) => node.nodeType === Node.TEXT_NODE)
+    .map((node) => node.textContent.trim())
+    .filter(Boolean);
 
-  if (eyebrow && eyebrow.textContent.trim()) {
+  const eyebrowText = textNodes[0]
+    || [...row.querySelectorAll('p')]
+      .map((p) => p.textContent.trim())
+      .find((text) => text && text !== (link && link.textContent.trim()));
+
+  if (eyebrowText) {
     const eyebrowEl = document.createElement('p');
     eyebrowEl.className = 'b-cards-eyebrow';
-    eyebrowEl.textContent = eyebrow.textContent.trim();
+    eyebrowEl.textContent = eyebrowText;
     wrapper.append(eyebrowEl);
   }
 
-  if (title) {
+  if (heading) {
     const titleEl = document.createElement('div');
     titleEl.className = 'b-cards-title';
-    titleEl.innerHTML = title.innerHTML;
+    titleEl.innerHTML = heading.outerHTML;
     wrapper.append(titleEl);
   }
 
-  if (cta) {
-    const link = cta.querySelector('a');
-    if (link) {
-      const ctaWrapper = document.createElement('p');
-      ctaWrapper.className = 'b-cards-header-cta';
-      ctaWrapper.append(link.cloneNode(true));
-      wrapper.append(ctaWrapper);
-    }
+  if (link) {
+    const ctaWrapper = document.createElement('p');
+    ctaWrapper.className = 'b-cards-header-cta';
+    ctaWrapper.append(link.cloneNode(true));
+    wrapper.append(ctaWrapper);
   }
 
   return wrapper;
@@ -70,21 +77,24 @@ function createDecorativeArt(variant) {
   return art;
 }
 
+function detectVariant(contentRow) {
+  const title = contentRow.querySelector('h1, h2, h3, h4, h5, h6');
+  const source = slugify(title ? title.textContent.trim() : contentRow.textContent.trim());
+
+  if (source.includes('calabaza')) return 'calabaza';
+  if (source.includes('fantasma')) return 'fantasma';
+  if (source.includes('murcielago')) return 'murcielago';
+  if (source.includes('bruja')) return 'bruja';
+  return '';
+}
+
 function createCard(row) {
   const li = document.createElement('li');
   li.className = 'b-cards-card';
   moveInstrumentation(row, li);
 
   const [imageRow, contentRow] = [...row.children];
-  let variant = '';
-
-  if (contentRow) {
-    const heading = contentRow.querySelector('h1, h2, h3, h4, h5, h6');
-    const tag = contentRow.querySelector('p');
-    const variantSource = (heading && heading.textContent.trim())
-      || (tag && tag.textContent.trim());
-    variant = slugify(variantSource).replace(/^tarjeta-/, '');
-  }
+  const variant = contentRow ? detectVariant(contentRow) : '';
 
   if (variant) {
     li.classList.add(`is-${variant}`);
