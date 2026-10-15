@@ -49,13 +49,28 @@ function createHeader(row) {
   return wrapper;
 }
 
-function createDecorativeArt(variant) {
+function createDecorativeArt(variant, imageRow) {
   const art = document.createElement('div');
   art.className = 'b-cards-card-art';
 
   const orb = document.createElement('div');
   orb.className = 'b-cards-card-orb';
   art.append(orb);
+
+  if (imageRow) {
+    const picture = imageRow.querySelector('picture');
+    if (picture) {
+      const clonedPicture = picture.cloneNode(true);
+      const img = clonedPicture.querySelector('img');
+      if (img) {
+        img.loading = 'eager';
+        img.decoding = 'async';
+      }
+      clonedPicture.classList.add('b-cards-card-picture');
+      art.append(clonedPicture);
+      return art;
+    }
+  }
 
   const icon = document.createElement('div');
   icon.className = 'b-cards-card-icon';
@@ -100,7 +115,7 @@ function createCard(row) {
     li.classList.add(`is-${variant}`);
   }
 
-  li.append(createDecorativeArt(variant));
+  li.append(createDecorativeArt(variant, imageRow));
 
   if (imageRow) {
     const picture = imageRow.querySelector('picture');
