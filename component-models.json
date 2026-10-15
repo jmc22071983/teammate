@@ -214,5 +214,42 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "hero3",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "component": "aem-content",
+        "name": "cta",
+        "label": "Primary CTA"
+      },
+      {
+        "component": "text",
+        "name": "ctaText",
+        "label": "Primary CTA Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "secondaryCta",
+        "label": "Secondary CTA"
+      },
+      {
+        "component": "text",
+        "name": "secondaryCtaText",
+        "label": "Secondary CTA Text"
+      }
+    ]
   }
 ]
