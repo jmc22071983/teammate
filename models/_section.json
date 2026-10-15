@@ -48,11 +48,9 @@
         "button",
         "title",
         "hero",
-        "hero2",
         "cards",
         "columns",
-        "fragment",
-        "hero3"
+        "fragment"
       ]
     }
   ]
