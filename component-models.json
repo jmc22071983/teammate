@@ -288,5 +288,34 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "b-hero",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Título"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtítulo"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "primaryButtonText",
+        "label": "Texto del Botón Primario"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryButtonText",
+        "label": "Texto del Botón Secundario"
+      }
+    ]
   }
 ]
