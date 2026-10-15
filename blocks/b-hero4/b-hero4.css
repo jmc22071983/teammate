@@ -1,0 +1,28 @@
+.b-hero4-title {
+  font-family: Poppins, sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: rgb(255 255 255 / 100%);
+}
+
+.b-hero4-subtitle {
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  color: rgb(255 255 255 / 100%);
+}
+
+.b-hero4-primary-button,
+.b-hero4-secondary-button {
+  font-family: Poppins, sans-serif;
+  font-size: 17px;
+  padding: 12px 8px;
+  border-radius: 160px;
+  background-color: rgb(255 122 0 / 100%);
+  color: rgb(255 255 255 / 100%);
+}
+
+.b-hero4-primary-button:hover,
+.b-hero4-secondary-button:hover {
+  background-color: rgb(255 122 0 / 80%);
+}
