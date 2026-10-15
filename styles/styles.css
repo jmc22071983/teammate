@@ -146,6 +146,13 @@ main > div {
   margin: 40px 16px;
 }
 
+/* secciones full-bleed de la landing EDS-AEM (fondo propio hasta el borde, sin el margen por defecto) */
+main > div:has(> .hero3),
+main > div:has(> .b-hero),
+main > div:has(> .b-banner) {
+  margin: 0;
+}
+
 input,
 textarea,
 select,
