@@ -1,43 +1,6 @@
-[
-  {
-    "id": "main",
-    "components": [
-      "section"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "hero2",
-      "cards",
-      "columns",
-      "fragment"
-    ]
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  }
-]
+[{
+  "id": "section",
+  "components": [
+    "hero3"
+  ]
+}]
