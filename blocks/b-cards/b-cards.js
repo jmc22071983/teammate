@@ -1,5 +1,13 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
+
+function slugify(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 
 function createHeader(row) {
   const wrapper = document.createElement('div');
@@ -34,23 +42,61 @@ function createHeader(row) {
   return wrapper;
 }
 
+function createDecorativeArt(variant) {
+  const art = document.createElement('div');
+  art.className = 'b-cards-card-art';
+
+  const orb = document.createElement('div');
+  orb.className = 'b-cards-card-orb';
+  art.append(orb);
+
+  const icon = document.createElement('div');
+  icon.className = 'b-cards-card-icon';
+  icon.setAttribute('aria-hidden', 'true');
+
+  if (variant === 'calabaza') {
+    icon.textContent = '🎃';
+  } else if (variant === 'fantasma') {
+    icon.textContent = '👻';
+  } else if (variant === 'murcielago') {
+    icon.textContent = '🦇';
+  } else if (variant === 'bruja') {
+    icon.textContent = '🧙';
+  } else {
+    icon.textContent = '✨';
+  }
+
+  art.append(icon);
+  return art;
+}
+
 function createCard(row) {
   const li = document.createElement('li');
   li.className = 'b-cards-card';
   moveInstrumentation(row, li);
 
   const [imageRow, contentRow] = [...row.children];
+  let variant = '';
+
+  if (contentRow) {
+    const [tag, heading] = [...contentRow.children];
+    const variantSource = (heading && heading.textContent.trim()) || (tag && tag.textContent.trim());
+    variant = slugify(variantSource);
+  }
+
+  if (variant) {
+    li.classList.add(`is-${variant}`);
+  }
+
+  li.append(createDecorativeArt(variant));
 
   if (imageRow) {
     const picture = imageRow.querySelector('picture');
     if (picture) {
-      const imageWrapper = document.createElement('div');
-      imageWrapper.className = 'b-cards-card-image';
       const img = picture.querySelector('img');
-      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-      moveInstrumentation(img, optimizedPic.querySelector('img'));
-      imageWrapper.append(optimizedPic);
-      li.append(imageWrapper);
+      if (img) {
+        li.dataset.assetImage = img.src;
+      }
     }
   }
 

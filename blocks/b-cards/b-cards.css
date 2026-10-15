@@ -64,15 +64,62 @@
   background: rgb(255 255 255 / 4%);
 }
 
-.b-cards .b-cards-card-image picture,
-.b-cards .b-cards-card-image img {
-  display: block;
-  width: 100%;
+.b-cards .b-cards-card-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  overflow: hidden;
 }
 
-.b-cards .b-cards-card-image img {
-  aspect-ratio: 284 / 180;
-  object-fit: cover;
+.b-cards .b-cards-card-orb {
+  position: absolute;
+  inset: auto auto -48px 50%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  filter: blur(8px);
+  opacity: 0.9;
+}
+
+.b-cards .b-cards-card-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 88px;
+  line-height: 1;
+}
+
+.b-cards .b-cards-card.is-calabaza .b-cards-card-art {
+  background: linear-gradient(135deg, #ff7a00 0%, #7a2b00 60%, #12071f 100%);
+}
+
+.b-cards .b-cards-card.is-calabaza .b-cards-card-orb {
+  background: radial-gradient(circle, rgb(255 190 92 / 95%) 0%, rgb(255 122 0 / 0%) 70%);
+}
+
+.b-cards .b-cards-card.is-fantasma .b-cards-card-art {
+  background: linear-gradient(135deg, #d8d4ff 0%, #7f6bff 55%, #12071f 100%);
+}
+
+.b-cards .b-cards-card.is-fantasma .b-cards-card-orb {
+  background: radial-gradient(circle, rgb(255 255 255 / 95%) 0%, rgb(216 212 255 / 0%) 70%);
+}
+
+.b-cards .b-cards-card.is-murcielago .b-cards-card-art {
+  background: linear-gradient(135deg, #ff4fd8 0%, #7b1fa2 55%, #12071f 100%);
+}
+
+.b-cards .b-cards-card.is-murcielago .b-cards-card-orb {
+  background: radial-gradient(circle, rgb(255 143 226 / 95%) 0%, rgb(255 79 216 / 0%) 70%);
+}
+
+.b-cards .b-cards-card.is-bruja .b-cards-card-art {
+  background: linear-gradient(135deg, #7dff7a 0%, #1f7a2b 55%, #12071f 100%);
+}
+
+.b-cards .b-cards-card.is-bruja .b-cards-card-orb {
+  background: radial-gradient(circle, rgb(181 255 179 / 95%) 0%, rgb(125 255 122 / 0%) 70%);
 }
 
 .b-cards .b-cards-card-body {
