@@ -1,0 +1,22 @@
+.hero4-headline {
+  font-size: 2rem;
+  color: var(--headline-color);
+}
+.hero4-intro {
+  font-size: 1.5rem;
+  color: var(--intro-color);
+}
+.hero4-cta {
+  background-color: var(--cta-bg-color);
+  color: var(--cta-text-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.hero4-secondary {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+.hero4-note {
+  font-size: 1rem;
+  color: var(--note-color);
+}
