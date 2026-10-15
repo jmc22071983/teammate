@@ -21,6 +21,61 @@
       "id": "hero2",
       "fields": [
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "subheadline",
+          "label": "Subheadline"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "headline",
+          "label": "Headline"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "intro",
+          "label": "Intro"
+        },
+        {
+          "component": "group",
+          "name": "cta",
+          "label": "Call to Actions",
+          "fields": [
+            {
+              "component": "aem-content",
+              "valueType": "string",
+              "name": "primaryCta",
+              "label": "Primary CTA"
+            },
+            {
+              "component": "text",
+              "valueType": "string",
+              "name": "primaryCtaText",
+              "label": "Primary CTA Text"
+            },
+            {
+              "component": "aem-content",
+              "valueType": "string",
+              "name": "secondaryCta",
+              "label": "Secondary CTA"
+            },
+            {
+              "component": "text",
+              "valueType": "string",
+              "name": "secondaryCtaText",
+              "label": "Secondary CTA Text"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "editorialNote",
+          "label": "Editorial Note"
+        },
+        {
           "component": "reference",
           "valueType": "string",
           "name": "image",
@@ -31,67 +86,13 @@
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Alt",
-          "value": ""
+          "label": "Image Alt Text"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "eyebrow",
-          "label": "Eyebrow",
-          "value": ""
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "content_headline",
-          "label": "Headline",
-          "value": ""
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "content_intro",
-          "label": "Introduction",
-          "value": ""
-        },
-        {
-          "component": "aem-content",
-          "name": "content_cta",
-          "label": "CTA Link"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "content_ctaText",
-          "label": "CTA Text",
-          "value": ""
-        },
-        {
-          "component": "aem-content",
-          "name": "content_secondary",
-          "label": "Secondary Link"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "content_secondaryText",
-          "label": "Secondary Link Text",
-          "value": ""
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "meta_editorialNote",
-          "label": "Editorial Note",
-          "value": ""
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "meta_caption",
-          "label": "Image Caption",
-          "value": ""
+          "name": "caption",
+          "label": "Image Caption"
         }
       ]
     }
