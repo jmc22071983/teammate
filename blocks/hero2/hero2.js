@@ -1,4 +1,4 @@
-export default function decorate(block) {
+﻿export default function decorate(block) {
   const image = block.querySelector('img');
   const text = block.querySelector('h1');
   const intro = block.querySelector('p');
@@ -25,3 +25,4 @@ export default function decorate(block) {
     intro.style.lineHeight = '150%';
   }
 }
+
