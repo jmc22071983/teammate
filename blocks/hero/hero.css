@@ -23,6 +23,32 @@
   background: linear-gradient(135deg, #2a0b4a 0%, #120720 60%, #3a1200 100%);
 }
 
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hero::before {
+  top: 30px;
+  right: 60px;
+  width: 150px;
+  height: 150px;
+  background-image: url('/content/dam/teammate/landing-luna.png');
+}
+
+.hero::after {
+  right: 40px;
+  bottom: 20px;
+  width: 230px;
+  height: 230px;
+  background-image: url('/content/dam/teammate/landing-calabaza-hero.png');
+}
+
 .hero > div {
   width: 100%;
 }
@@ -31,6 +57,32 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+}
+
+.hero .hero-image::before,
+.hero .hero-image::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hero .hero-image::before {
+  top: 40px;
+  left: 40px;
+  width: 150px;
+  height: 83px;
+  background-image: url('/content/dam/teammate/landing-murcielago-1.png');
+}
+
+.hero .hero-image::after {
+  top: 130px;
+  left: 200px;
+  width: 100px;
+  height: 55px;
+  background-image: url('/content/dam/teammate/landing-murcielago-2.png');
 }
 
 .hero .hero-image picture,
@@ -46,14 +98,19 @@
 }
 
 .hero .hero-image img {
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.3;
+  object-fit: contain;
+  object-position: left bottom;
+  opacity: 1;
+  width: min(180px, 22vw);
+  height: auto;
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
 }
 
 .hero .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,6 +132,7 @@
 }
 
 .hero .hero-copy {
+  max-width: 800px;
   margin: 24px 0 0;
   color: #fff;
   font-family: Poppins, var(--body-font-family);
@@ -142,6 +200,40 @@
   .hero {
     min-height: 420px;
     padding: 64px 24px;
+  }
+
+  .hero::before {
+    top: 24px;
+    right: 24px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .hero::after {
+    right: 16px;
+    bottom: 16px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero .hero-image::before {
+    top: 24px;
+    left: 16px;
+    width: 96px;
+    height: 53px;
+  }
+
+  .hero .hero-image::after {
+    top: 84px;
+    left: 96px;
+    width: 72px;
+    height: 40px;
+  }
+
+  .hero .hero-image img {
+    left: 24px;
+    bottom: 24px;
+    width: 120px;
   }
 
   .hero .hero-title {
