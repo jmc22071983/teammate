@@ -142,6 +142,64 @@
     ]
   },
   {
+    "id": "b-cards",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "header_text",
+        "value": "",
+        "label": "Header Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "header_cta",
+        "label": "Header CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "header_ctaText",
+        "label": "Header CTA Text"
+      }
+    ]
+  },
+  {
+    "id": "b-card-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content_text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "content_cta",
+        "label": "CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "content_ctaText",
+        "label": "CTA Text"
+      }
+    ]
+  },
+  {
     "id": "b-hero",
     "fields": [
       {
