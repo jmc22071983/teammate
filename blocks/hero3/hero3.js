@@ -1,6 +1,7 @@
 export default function decorate(block) {
   const rows = [...block.children];
-  const [eyebrowRow, headlineRow, introRow, ctaRow, secondaryLinkRow, editorialNoteRow, imageRow, captionRow] = rows;
+  const [eyebrowRow, headlineRow, introRow, ctaRow,
+    secondaryLinkRow, editorialNoteRow, imageRow, captionRow] = rows;
 
   const eyebrow = eyebrowRow.querySelector('div');
   eyebrow.classList.add('eyebrow');
