@@ -1,29 +1,51 @@
-import { decorateBlock } from '../../scripts/aem.js';
-
 export default function decorate(block) {
-  const title = document.createElement('h1');
-  title.className = 'b-hero-title';
-  title.textContent = block.dataset.title || 'Título por defecto';
-  block.appendChild(title);
+  const [titleRow, subtitleRow, primaryCtaRow, secondaryCtaRow] = [...block.children];
+  const content = document.createElement('div');
+  content.className = 'b-hero-content';
 
-  const subtitle = document.createElement('p');
-  subtitle.className = 'b-hero-subtitle';
-  subtitle.textContent = block.dataset.subtitle || 'Subtítulo por defecto';
-  block.appendChild(subtitle);
+  if (titleRow) {
+    const title = document.createElement('h1');
+    title.textContent = titleRow.textContent;
+    content.appendChild(title);
+  }
 
-  const buttonsContainer = document.createElement('div');
-  buttonsContainer.className = 'b-hero-buttons';
+  if (subtitleRow) {
+    const subtitle = document.createElement('p');
+    subtitle.textContent = subtitleRow.textContent;
+    content.appendChild(subtitle);
+  }
 
-  const primaryButton = document.createElement('button');
-  primaryButton.className = 'b-hero-button b-hero-button-primary';
-  primaryButton.textContent = block.dataset.primaryButtonText || 'Botón Primario';
-  buttonsContainer.appendChild(primaryButton);
+  const buttons = document.createElement('div');
+  buttons.className = 'b-hero-buttons';
 
-  const secondaryButton = document.createElement('button');
-  secondaryButton.className = 'b-hero-button b-hero-button-secondary';
-  secondaryButton.textContent = block.dataset.secondaryButtonText || 'Botón Secundario';
-  buttonsContainer.appendChild(secondaryButton);
+  if (primaryCtaRow) {
+    const primaryLink = primaryCtaRow.querySelector('a');
 
-  block.appendChild(buttonsContainer);
-  decorateBlock(block);
+    if (primaryLink) {
+      const link = document.createElement('a');
+      link.href = primaryLink.href;
+      link.textContent = primaryLink.textContent;
+      link.className = 'cta';
+      buttons.appendChild(link);
+    }
+  }
+
+  if (secondaryCtaRow) {
+    const secondaryLink = secondaryCtaRow.querySelector('a');
+
+    if (secondaryLink) {
+      const link = document.createElement('a');
+      link.href = secondaryLink.href;
+      link.textContent = secondaryLink.textContent;
+      link.className = 'secondary-cta';
+      buttons.appendChild(link);
+    }
+  }
+
+  if (buttons.children.length) {
+    content.appendChild(buttons);
+  }
+
+  block.textContent = '';
+  block.appendChild(content);
 }

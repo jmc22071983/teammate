@@ -1,64 +1,112 @@
-/* Estilos CSS para el bloque b-hero */
 .b-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #2a0b4a 0%, #12071f 43%, #3a1200 71%);
+}
+
+.b-hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  background-color: #ff7a00;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  gap: 24px;
+  width: 100%;
+  max-width: 1280px;
+  padding: 80px 0;
+  box-shadow: 0 3px 46px 0 rgb(0 0 0 / 14%);
 }
 
-.b-hero-title {
-  font-family: 'Poppins', sans-serif;
+.b-hero h1 {
+  max-width: 800px;
+  margin: 0;
+  font-family: Poppins, var(--body-font-family);
   font-size: 48px;
   font-weight: 400;
-  color: #ffffff;
-  margin-bottom: 10px;
+  line-height: 72px;
+  letter-spacing: 0.0208em;
+  text-align: center;
+  color: #fff;
 }
 
-.b-hero-subtitle {
-  font-family: 'Poppins', sans-serif;
+.b-hero p {
+  max-width: 800px;
+  margin: 0;
+  font-family: Poppins, var(--body-font-family);
   font-size: 24px;
   font-weight: 400;
-  color: #ffffff;
-  margin-bottom: 20px;
+  line-height: 36px;
+  letter-spacing: 0.0417em;
+  text-align: center;
+  color: #fff;
 }
 
 .b-hero-buttons {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
-.b-hero-button {
-  font-family: 'Poppins', sans-serif;
+.b-hero .cta,
+.b-hero .secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  font-family: Poppins, var(--body-font-family);
   font-size: 17px;
   font-weight: 400;
-  padding: 12px 20px;
+  line-height: 24px;
+  text-decoration: none;
   border-radius: 160px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%);
 }
 
-.b-hero-button-primary {
+.b-hero .cta {
   background-color: #ff7a00;
-  color: #ffffff;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  color: #12071f;
 }
 
-.b-hero-button-primary:hover {
-  background-color: #e56c00;
+.b-hero .cta:hover {
+  background-color: #e66e00;
 }
 
-.b-hero-button-secondary {
-  background-color: transparent;
-  color: #ff7a00;
-  border: 2px solid #ff7a00;
+.b-hero .secondary-cta {
+  background-color: #2a0b4a;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
-.b-hero-button-secondary:hover {
-  background-color: #ff7a00;
-  color: #ffffff;
+.b-hero .secondary-cta:hover {
+  background-color: #3a1260;
+}
+
+@media (width < 900px) {
+  .b-hero {
+    padding: 0 16px;
+  }
+
+  .b-hero-content {
+    padding: 64px 0;
+  }
+
+  .b-hero h1 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .b-hero p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .b-hero .cta,
+  .b-hero .secondary-cta {
+    width: 100%;
+  }
 }
