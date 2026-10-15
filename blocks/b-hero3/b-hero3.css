@@ -30,6 +30,31 @@
   height: 100%;
 }
 
+.b-hero3 .subtitle {
+  font-size: 24px;
+  color: var(--text-color-secondary);
+}
+
+.b-hero3 .buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.b-hero3 .button-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+.b-hero3 .button-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 12px 24px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+}
+
 @media (width >= 900px) {
   .b-hero3 {
     padding: 40px 32px;

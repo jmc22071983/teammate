@@ -35,11 +35,36 @@
           "value": ""
         },
         {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "component": "aem-content",
+          "name": "primaryCTA",
+          "label": "Primary CTA"
+        },
+        {
+          "component": "text",
+          "name": "primaryCTAText",
+          "label": "Primary CTA Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "secondaryCTA",
+          "label": "Secondary CTA"
+        },
+        {
+          "component": "text",
+          "name": "secondaryCTAText",
+          "label": "Secondary CTA Text"
         }
       ]
     }
