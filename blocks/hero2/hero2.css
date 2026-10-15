@@ -1,0 +1,74 @@
+.hero2-container .hero2-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero2 {
+  position: relative;
+  padding: 52px 72px;
+  min-height: 662px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero2 h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 78px;
+  color: rgb(246 241 229 / 100%);
+  line-height: 1.04;
+  margin: 0;
+}
+
+.hero2 .intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  color: rgb(174 189 176 / 100%);
+  line-height: 1.65;
+  margin: 24px 0;
+}
+
+.hero2 .cta {
+  background-color: rgb(255 152 86 / 100%);
+  color: rgb(20 32 23 / 100%);
+  padding: 13px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero2 .cta:hover {
+  background-color: rgb(255 152 86 / 80%);
+}
+
+.hero2 .secondary-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgb(246 241 229 / 100%);
+  text-decoration: underline;
+  margin-left: 24px;
+}
+
+.hero2 .note {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: rgb(174 189 176 / 100%);
+  margin-top: 25px;
+}
+
+.hero2 picture {
+  position: relative;
+  width: 50%;
+  height: auto;
+}
+
+.hero2 img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
