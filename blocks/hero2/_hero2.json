@@ -35,43 +35,50 @@
           "value": ""
         },
         {
-          "component": "richtext",
-          "name": "headline",
-          "value": "",
-          "label": "Headline",
-          "valueType": "string"
-        },
-        {
-          "component": "richtext",
-          "name": "intro",
-          "value": "",
-          "label": "Introduction",
-          "valueType": "string"
-        },
-        {
-          "component": "aem-content",
-          "name": "cta",
-          "label": "CTA Link"
-        },
-        {
-          "component": "text",
-          "name": "ctaText",
-          "label": "CTA Text"
-        },
-        {
-          "component": "aem-content",
-          "name": "secondaryLink",
-          "label": "Secondary Link"
-        },
-        {
-          "component": "text",
-          "name": "secondaryText",
-          "label": "Secondary Text"
-        },
-        {
-          "component": "text",
-          "name": "editorialNote",
-          "label": "Editorial Note"
+          "component": "group",
+          "name": "content",
+          "label": "Content",
+          "fields": [
+            {
+              "component": "richtext",
+              "name": "headline",
+              "value": "",
+              "label": "Headline",
+              "valueType": "string"
+            },
+            {
+              "component": "richtext",
+              "name": "intro",
+              "value": "",
+              "label": "Introduction",
+              "valueType": "string"
+            },
+            {
+              "component": "aem-content",
+              "name": "cta",
+              "label": "CTA Link"
+            },
+            {
+              "component": "text",
+              "name": "ctaText",
+              "label": "CTA Text"
+            },
+            {
+              "component": "aem-content",
+              "name": "secondaryLink",
+              "label": "Secondary Link"
+            },
+            {
+              "component": "text",
+              "name": "secondaryText",
+              "label": "Secondary Text"
+            },
+            {
+              "component": "text",
+              "name": "editorialNote",
+              "label": "Editorial Note"
+            }
+          ]
         }
       ]
     }

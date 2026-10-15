@@ -3,11 +3,7 @@ export default function decorate(block) {
   const [contentRow, imageRow] = rows;
   const contentElements = [...contentRow.children];
 
-  const headline = contentElements[0]?.querySelector('div');
-  const intro = contentElements[1]?.querySelector('div');
-  const cta = contentElements[2]?.querySelector('a');
-  const secondaryLink = contentElements[3]?.querySelector('a');
-  const editorialNote = contentElements[4]?.querySelector('div');
+  const [headline, intro, cta, secondaryLink, editorialNote] = contentElements;
 
   if (headline) headline.classList.add('headline');
   if (intro) intro.classList.add('intro');
