@@ -79,10 +79,11 @@ function createCard(row) {
   let variant = '';
 
   if (contentRow) {
-    const [tag, heading] = [...contentRow.children];
+    const heading = contentRow.querySelector('h1, h2, h3, h4, h5, h6');
+    const tag = contentRow.querySelector('p');
     const variantSource = (heading && heading.textContent.trim())
       || (tag && tag.textContent.trim());
-    variant = slugify(variantSource);
+    variant = slugify(variantSource).replace(/^tarjeta-/, '');
   }
 
   if (variant) {
