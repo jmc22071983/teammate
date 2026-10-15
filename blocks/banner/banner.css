@@ -22,6 +22,32 @@
   background: linear-gradient(135deg, #ff7a00 0%, #b53a00 60%, #2a0b4a 100%);
 }
 
+.banner::before,
+.banner::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.banner::before {
+  top: 28px;
+  right: 360px;
+  width: 140px;
+  height: 77px;
+  background-image: url('/content/dam/teammate/landing-murcielago-banner.png');
+}
+
+.banner::after {
+  top: 28px;
+  right: 28px;
+  width: 150px;
+  height: 150px;
+  background-image: url('/content/dam/teammate/landing-fantasma-banner.png');
+}
+
 .banner > div {
   width: 100%;
 }
@@ -30,6 +56,18 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+}
+
+.banner .banner-image::after {
+  content: '';
+  position: absolute;
+  right: 180px;
+  bottom: 24px;
+  width: 180px;
+  height: 180px;
+  z-index: 1;
+  pointer-events: none;
+  background: url('/content/dam/teammate/landing-calabaza-banner.png') center / contain no-repeat;
 }
 
 .banner .banner-image picture,
@@ -45,14 +83,12 @@
 }
 
 .banner .banner-image img {
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.18;
+  opacity: 0;
 }
 
 .banner .banner-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -142,6 +178,27 @@
   .banner {
     min-height: 420px;
     padding: 64px 24px;
+  }
+
+  .banner::before {
+    top: 20px;
+    right: 140px;
+    width: 84px;
+    height: 46px;
+  }
+
+  .banner::after {
+    top: 20px;
+    right: 20px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .banner .banner-image::after {
+    right: 24px;
+    bottom: 20px;
+    width: 120px;
+    height: 120px;
   }
 
   .banner .banner-title {
