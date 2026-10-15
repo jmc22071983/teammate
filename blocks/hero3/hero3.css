@@ -1,0 +1,38 @@
+.hero3 {
+  display: flex;
+  flex-direction: row;
+  padding: 52px 72px;
+  gap: 56px;
+}
+
+.hero3 .headline {
+  font-family: 'Fraunces', serif;
+  font-size: 78px;
+  color: #F6F1E5;
+}
+
+.hero3 .intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  color: #AEBDB0;
+}
+
+.hero3 .cta {
+  background-color: #FF9868;
+  color: #141F17;
+  padding: 16px 24px;
+  border-radius: 100px;
+}
+
+.hero3 .secondary-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-decoration: underline;
+  color: #F6F1E5;
+}
+
+.hero3 .editorial-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #AEBDB0;
+}
