@@ -112,6 +112,7 @@
 }
 
 .banner .banner-copy {
+  max-width: 640px;
   margin: 24px 0 0;
   color: #fff;
   font-family: Poppins, var(--body-font-family);

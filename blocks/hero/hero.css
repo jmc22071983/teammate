@@ -132,6 +132,7 @@
 }
 
 .hero .hero-copy {
+  max-width: 800px;
   margin: 24px 0 0;
   color: #fff;
   font-family: Poppins, var(--body-font-family);
