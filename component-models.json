@@ -57,4 +57,43 @@
       "valueType": "string"
     }
   ]
+},
+{
+  "id": "b-hero1",
+  "fields": [
+    {
+      "component": "richtext",
+      "name": "title",
+      "value": "",
+      "label": "Title",
+      "valueType": "string"
+    },
+    {
+      "component": "richtext",
+      "name": "subtitle",
+      "value": "",
+      "label": "Subtitle",
+      "valueType": "string"
+    },
+    {
+      "component": "aem-content",
+      "name": "primaryButton",
+      "label": "Primary Button"
+    },
+    {
+      "component": "text",
+      "name": "primaryButtonText",
+      "label": "Primary Button Text"
+    },
+    {
+      "component": "aem-content",
+      "name": "secondaryButton",
+      "label": "Secondary Button"
+    },
+    {
+      "component": "text",
+      "name": "secondaryButtonText",
+      "label": "Secondary Button Text"
+    }
+  ]
 }]

@@ -1,6 +1,7 @@
 [{
   "id": "section",
   "components": [
-    "hero4"
+    "hero4",
+    "b-hero1"
   ]
 }]
