@@ -147,70 +147,70 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "media_card",
         "label": "Card Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
+        "name": "media_cardAlt",
         "label": "Card Image Alt",
         "value": ""
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "moon",
+        "name": "decor_moon",
         "label": "Moon Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "moonAlt",
+        "name": "decor_moonAlt",
         "label": "Moon Image Alt",
         "value": ""
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "pumpkin",
+        "name": "decor_pumpkin",
         "label": "Pumpkin Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "pumpkinAlt",
+        "name": "decor_pumpkinAlt",
         "label": "Pumpkin Image Alt",
         "value": ""
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "batPrimary",
+        "name": "decor_batPrimary",
         "label": "Primary Bat Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "batPrimaryAlt",
+        "name": "decor_batPrimaryAlt",
         "label": "Primary Bat Image Alt",
         "value": ""
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "batSecondary",
+        "name": "decor_batSecondary",
         "label": "Secondary Bat Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "batSecondaryAlt",
+        "name": "decor_batSecondaryAlt",
         "label": "Secondary Bat Image Alt",
         "value": ""
       },

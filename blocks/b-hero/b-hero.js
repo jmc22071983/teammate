@@ -29,22 +29,17 @@ function createButton(href, text, variant) {
 }
 
 export default function decorate(block) {
-  const [
-    cardRow,
-    moonRow,
-    pumpkinRow,
-    batPrimaryRow,
-    batSecondaryRow,
-    contentRow,
-    primaryRow,
-    secondaryRow,
-  ] = [...block.children];
+  const [mediaRow, decorRow, contentRow] = [...block.children];
 
-  const cardImage = cardRow ? cardRow.querySelector('picture img') : null;
-  const moonImage = moonRow ? moonRow.querySelector('picture img') : null;
-  const pumpkinImage = pumpkinRow ? pumpkinRow.querySelector('picture img') : null;
-  const batPrimaryImage = batPrimaryRow ? batPrimaryRow.querySelector('picture img') : null;
-  const batSecondaryImage = batSecondaryRow ? batSecondaryRow.querySelector('picture img') : null;
+  const mediaChildren = mediaRow ? [...mediaRow.children] : [];
+  const decorChildren = decorRow ? [...decorRow.children] : [];
+  const contentChildren = contentRow ? [...contentRow.children] : [];
+
+  const cardImage = mediaChildren[0] ? mediaChildren[0].querySelector('picture img') : null;
+  const moonImage = decorChildren[0] ? decorChildren[0].querySelector('picture img') : null;
+  const pumpkinImage = decorChildren[1] ? decorChildren[1].querySelector('picture img') : null;
+  const batPrimaryImage = decorChildren[2] ? decorChildren[2].querySelector('picture img') : null;
+  const batSecondaryImage = decorChildren[3] ? decorChildren[3].querySelector('picture img') : null;
 
   const stage = document.createElement('div');
   stage.className = 'b-hero-stage';
@@ -66,8 +61,11 @@ export default function decorate(block) {
     const textWrapper = document.createElement('div');
     textWrapper.className = 'b-hero-text';
 
-    while (contentRow.firstElementChild) {
-      textWrapper.append(contentRow.firstElementChild);
+    const textRow = contentChildren[0];
+    if (textRow) {
+      while (textRow.firstElementChild) {
+        textWrapper.append(textRow.firstElementChild);
+      }
     }
 
     const heading = textWrapper.querySelector('h1, h2, h3, h4, h5, h6');
@@ -82,8 +80,8 @@ export default function decorate(block) {
   const actions = document.createElement('div');
   actions.className = 'b-hero-actions';
 
-  const primaryLink = primaryRow ? primaryRow.querySelector('a') : null;
-  const secondaryLink = secondaryRow ? secondaryRow.querySelector('a') : null;
+  const primaryLink = contentChildren[1] ? contentChildren[1].querySelector('a') : null;
+  const secondaryLink = contentChildren[2] ? contentChildren[2].querySelector('a') : null;
 
   const primaryButton = createButton(
     primaryLink ? primaryLink.href : '',
