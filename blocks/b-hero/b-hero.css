@@ -86,7 +86,7 @@
   background-color: #3a1260;
 }
 
-@media (width <= 899px) {
+@media (max-width: 899px) {
   .b-hero {
     padding: 0 16px;
   }
