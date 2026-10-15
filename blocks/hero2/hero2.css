@@ -21,7 +21,7 @@
 }
 
 .hero2 .content .headline {
-  font-family: 'Fraunces', serif;
+  font-family: Fraunces, serif;
   font-size: 78px;
   font-weight: 600;
   color: var(--headline-color);
@@ -29,14 +29,14 @@
 }
 
 .hero2 .content .subheadline {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: var(--subheadline-color);
 }
 
 .hero2 .content .intro {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 17px;
   font-weight: 400;
   color: var(--intro-color);
@@ -55,13 +55,13 @@
   padding: 16px 24px;
   border-radius: 100px;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 14px;
   font-weight: 600;
 }
 
 .hero2 .content .cta .secondary {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: var(--cta-secondary-text-color);
@@ -81,12 +81,12 @@
 }
 
 .hero2 .image .caption {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: var(--caption-color);
   margin-top: 13px;
-  background-color: rgba(16, 25, 20, 0.85);
+  background-color: rgb(16 25 20 / 85%);
   padding: 13px 16px;
   border-radius: 8px;
 }
