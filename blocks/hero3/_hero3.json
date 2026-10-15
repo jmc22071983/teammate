@@ -43,14 +43,14 @@
         },
         {
           "component": "richtext",
-          "name": "headline",
+          "name": "content_headline",
           "value": "",
           "label": "Headline",
           "valueType": "string"
         },
         {
           "component": "richtext",
-          "name": "intro",
+          "name": "content_intro",
           "value": "",
           "label": "Introduction",
           "valueType": "string"
@@ -58,28 +58,28 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "cta",
+          "name": "content_cta",
           "label": "CTA",
           "value": ""
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "secondaryLink",
+          "name": "content_secondaryLink",
           "label": "Secondary Link",
           "value": ""
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "editorialNote",
+          "name": "meta_editorialNote",
           "label": "Editorial Note",
           "value": ""
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "imageCaption",
+          "name": "meta_imageCaption",
           "label": "Image Caption",
           "value": ""
         }

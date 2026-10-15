@@ -1,29 +1,23 @@
 export default function decorate(block) {
-  const rows = [...block.children];
-  const [eyebrowRow, headlineRow, introRow, ctaRow,
-    secondaryLinkRow, editorialNoteRow, imageRow, captionRow] = rows;
+  // El modelo (_hero3.json) usa "field collapse" (image/imageAlt) y "element grouping"
+  // (prefijos content_* y meta_*) para no superar el limite de 4 celdas por bloque
+  // (regla xwalk/max-cells). Por eso el bloque solo tiene 4 divs hijos directos:
+  // 1) imagen, 2) eyebrow, 3) grupo "content" (headline, intro, cta, enlace secundario),
+  // 4) grupo "meta" (nota editorial, leyenda de imagen).
+  const [, eyebrowRow, contentRow, metaRow] = [...block.children];
 
-  const eyebrow = eyebrowRow.querySelector('div');
-  eyebrow.classList.add('eyebrow');
+  const eyebrow = eyebrowRow?.querySelector('div');
+  eyebrow?.classList.add('eyebrow');
 
-  const headline = headlineRow.querySelector('div');
-  headline.classList.add('headline');
+  const [headline, intro, cta, secondaryLink] = contentRow
+    ? [...contentRow.children]
+    : [];
+  headline?.classList.add('headline');
+  intro?.classList.add('intro');
+  cta?.classList.add('cta');
+  secondaryLink?.classList.add('secondary-link');
 
-  const intro = introRow.querySelector('div');
-  intro.classList.add('intro');
-
-  const cta = ctaRow.querySelector('div');
-  cta.classList.add('cta');
-
-  const secondaryLink = secondaryLinkRow.querySelector('div');
-  secondaryLink.classList.add('secondary-link');
-
-  const editorialNote = editorialNoteRow.querySelector('div');
-  editorialNote.classList.add('editorial-note');
-
-  const image = imageRow.querySelector('picture');
-  image.classList.add('image');
-
-  const caption = captionRow.querySelector('div');
-  caption.classList.add('image-caption');
+  const [editorialNote, caption] = metaRow ? [...metaRow.children] : [];
+  editorialNote?.classList.add('editorial-note');
+  caption?.classList.add('image-caption');
 }
