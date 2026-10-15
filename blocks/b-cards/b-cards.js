@@ -80,7 +80,8 @@ function createCard(row) {
 
   if (contentRow) {
     const [tag, heading] = [...contentRow.children];
-    const variantSource = (heading && heading.textContent.trim()) || (tag && tag.textContent.trim());
+    const variantSource = (heading && heading.textContent.trim())
+      || (tag && tag.textContent.trim());
     variant = slugify(variantSource);
   }
 
