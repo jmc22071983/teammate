@@ -250,6 +250,36 @@
     ]
   },
   {
+    "id": "hero3",
+    "fields": [
+      {
+        "component": "text",
+        "name": "content_headline",
+        "label": "Headline"
+      },
+      {
+        "component": "text",
+        "name": "content_intro",
+        "label": "Intro"
+      },
+      {
+        "component": "aem-content",
+        "name": "content_cta",
+        "label": "CTA"
+      },
+      {
+        "component": "text",
+        "name": "content_note",
+        "label": "Note"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image"
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
