@@ -317,5 +317,46 @@
         "label": "Texto del Botón Secundario"
       }
     ]
+  },
+  {
+    "id": "b-hero2",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "component": "link",
+        "valueType": "string",
+        "name": "primaryCta",
+        "label": "Primary CTA"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "primaryCtaText",
+        "label": "Primary CTA Text"
+      },
+      {
+        "component": "link",
+        "valueType": "string",
+        "name": "secondaryCta",
+        "label": "Secondary CTA"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCtaText",
+        "label": "Secondary CTA Text"
+      }
+    ]
   }
 ]
