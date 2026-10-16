@@ -120,10 +120,17 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  overflow: hidden;
   aspect-ratio: 16 / 9;
   padding: 16px;
   border-radius: 12px;
   background: linear-gradient(135deg, #ff7a00 0%, #7a2b00 60%, #120720 100%);
+}
+
+.b-cards .b-cards-card-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .b-cards .b-cards-card-media-icon {

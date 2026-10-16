@@ -55,14 +55,21 @@ function createHeader(rows) {
   return header;
 }
 
-function createMedia(iconText) {
+function createMedia(iconText, imageSrc, imageAlt) {
   const media = document.createElement('div');
   media.className = 'b-cards-card-media';
 
   const surface = document.createElement('div');
   surface.className = 'b-cards-card-media-surface';
 
-  if (iconText) {
+  if (imageSrc) {
+    const image = document.createElement('img');
+    image.className = 'b-cards-card-media-image';
+    image.src = imageSrc;
+    image.alt = imageAlt || '';
+    image.loading = 'lazy';
+    surface.append(image);
+  } else if (iconText) {
     const icon = document.createElement('span');
     icon.className = 'b-cards-card-media-icon';
     icon.textContent = iconText;
@@ -74,13 +81,14 @@ function createMedia(iconText) {
 }
 
 function decorateCard(row) {
-  const [iconRow, titleRow, categoryRow, textRow, ctaRow] = [...row.children];
+  const [iconRow, imageRow, , titleRow, categoryRow, textRow, ctaRow] = [...row.children];
   const item = document.createElement('li');
   item.className = 'b-cards-item';
   moveInstrumentation(row, item);
 
   const iconText = iconRow ? iconRow.textContent.trim() : '';
-  item.append(createMedia(iconText));
+  const image = imageRow ? imageRow.querySelector('picture img') : null;
+  item.append(createMedia(iconText, image ? image.src : '', image ? image.alt : ''));
 
   const body = document.createElement('div');
   body.className = 'b-cards-card-body';
