@@ -145,10 +145,17 @@
     "id": "b-cards",
     "fields": [
       {
-        "component": "richtext",
-        "name": "header_text",
+        "component": "text",
+        "name": "header_eyebrow",
         "value": "",
-        "label": "Header Text",
+        "label": "Header Eyebrow",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "header_title",
+        "value": "",
+        "label": "Header Title",
         "valueType": "string"
       },
       {
@@ -315,7 +322,8 @@
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Text",
+        "label": "Text"
+        ,
         "valueType": "string"
       }
     ]

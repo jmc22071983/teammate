@@ -2,16 +2,29 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function createHeader(block) {
-  const [headerRow, ctaRow] = [...block.children];
-  if (!headerRow) return null;
+  const [eyebrowRow, titleRow, ctaRow] = [...block.children];
+  if (!eyebrowRow && !titleRow && !ctaRow) return null;
 
   const header = document.createElement('div');
   header.className = 'b-cards-header';
 
   const copy = document.createElement('div');
   copy.className = 'b-cards-header-copy';
-  while (headerRow.firstElementChild) {
-    copy.append(headerRow.firstElementChild);
+
+  if (titleRow) {
+    const title = titleRow.querySelector('h1, h2, h3, h4, h5, h6, p');
+    if (title) {
+      title.classList.add('b-cards-header-title');
+      copy.append(title);
+    }
+  }
+
+  if (eyebrowRow) {
+    const eyebrow = eyebrowRow.querySelector('p');
+    if (eyebrow) {
+      eyebrow.classList.add('b-cards-header-eyebrow');
+      copy.append(eyebrow);
+    }
   }
 
   const action = document.createElement('div');
@@ -75,8 +88,8 @@ function decorateCard(row) {
 
 export default function decorate(block) {
   const rows = [...block.children];
-  const headerRows = rows.slice(0, 2);
-  const itemRows = rows.slice(2);
+  const headerRows = rows.slice(0, 3);
+  const itemRows = rows.slice(3);
 
   const headerSource = document.createElement('div');
   headerRows.forEach((row) => headerSource.append(row));

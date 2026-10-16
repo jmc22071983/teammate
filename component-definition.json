@@ -106,7 +106,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "b-card-item",
+                  "name": "b-cards",
                   "model": "b-card-item"
                 }
               }
