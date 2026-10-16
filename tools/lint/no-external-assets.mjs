@@ -12,42 +12,34 @@ const FORBIDDEN_PATTERNS = [
 ];
 
 function collectFiles(dir) {
-  let files = [];
-  for (const entry of readdirSync(dir)) {
+  return readdirSync(dir).flatMap((entry) => {
     const fullPath = join(dir, entry);
     const stats = statSync(fullPath);
     if (stats.isDirectory()) {
-      files = files.concat(collectFiles(fullPath));
-    } else if (EXTENSIONS.has(extname(entry))) {
-      files.push(fullPath);
+      return collectFiles(fullPath);
     }
-  }
-  return files;
+    return EXTENSIONS.has(extname(entry)) ? [fullPath] : [];
+  });
 }
 
-const violations = [];
-for (const root of ROOTS) {
-  let files;
+function safeCollectFiles(dir) {
   try {
-    files = collectFiles(root);
+    return collectFiles(dir);
   } catch {
-    continue;
-  }
-  for (const file of files) {
-    const content = readFileSync(file, 'utf8');
-    for (const { name, regex } of FORBIDDEN_PATTERNS) {
-      if (regex.test(content)) {
-        violations.push(`${file}: contiene ${name}`);
-      }
-    }
+    return [];
   }
 }
+
+const violations = ROOTS.flatMap((root) => safeCollectFiles(root).flatMap((file) => {
+  const content = readFileSync(file, 'utf8');
+  return FORBIDDEN_PATTERNS
+    .filter(({ regex }) => regex.test(content))
+    .map(({ name }) => `${file}: contiene ${name}`);
+}));
 
 if (violations.length > 0) {
   console.error('lint:assets - URLs externas de Figma encontradas (deben subirse al DAM y usar /content/dam/...):');
-  for (const v of violations) {
-    console.error(`  - ${v}`);
-  }
+  violations.forEach((v) => console.error(`  - ${v}`));
   process.exit(1);
 }
 
