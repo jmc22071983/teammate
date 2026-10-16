@@ -1,23 +1,19 @@
-function createDecorativeMedia(iconText) {
-  const media = document.createElement('div');
-  media.className = 'b-cards-card-image';
-
-  const surface = document.createElement('div');
-  surface.className = 'b-cards-card-image-surface';
-
-  if (iconText) {
-    const icon = document.createElement('span');
-    icon.className = 'b-cards-card-image-icon';
-    icon.textContent = iconText;
-    surface.append(icon);
-  }
-
-  media.append(surface);
-  return media;
+function createArrow() {
+  const arrow = document.createElement('span');
+  arrow.className = 'b-cards-arrow';
+  arrow.setAttribute('aria-hidden', 'true');
+  return arrow;
 }
 
-function createHeader(block) {
-  const [titleRow, subtitleRow, ctaRow] = [...block.children];
+function enhanceLink(link, className) {
+  if (!link) return null;
+  link.classList.add(className);
+  link.append(createArrow());
+  return link;
+}
+
+function createHeader(rows) {
+  const [titleRow, subtitleRow, ctaRow] = rows;
   if (!titleRow && !subtitleRow && !ctaRow) return null;
 
   const header = document.createElement('div');
@@ -42,81 +38,96 @@ function createHeader(block) {
     }
   }
 
-  const action = document.createElement('div');
-  action.className = 'b-cards-header-action';
+  header.append(copy);
+
   if (ctaRow) {
-    const link = ctaRow.querySelector('a');
+    const link = enhanceLink(ctaRow.querySelector('a'), 'b-cards-header-link');
     if (link) {
-      link.classList.add('b-cards-header-link');
+      const action = document.createElement('div');
+      action.className = 'b-cards-header-action';
       action.append(link);
+      header.append(action);
     }
   }
 
-  header.append(copy, action);
   return header;
 }
 
+function createMedia(iconText) {
+  const media = document.createElement('div');
+  media.className = 'b-cards-card-media';
+
+  const surface = document.createElement('div');
+  surface.className = 'b-cards-card-media-surface';
+
+  if (iconText) {
+    const icon = document.createElement('span');
+    icon.className = 'b-cards-card-media-icon';
+    icon.textContent = iconText;
+    surface.append(icon);
+  }
+
+  media.append(surface);
+  return media;
+}
+
 function decorateCard(row) {
-  const li = document.createElement('li');
-  li.className = 'b-cards-item';
+  const [iconRow, titleRow, categoryRow, textRow, ctaRow] = [...row.children];
+  const item = document.createElement('li');
+  item.className = 'b-cards-item';
 
-  const cells = [...row.children];
-  const mediaCell = cells[0];
-  const categoryCell = cells[1];
-  const contentCell = cells[2];
-  const ctaCell = cells[3];
-
-  const iconText = mediaCell ? mediaCell.textContent.trim() : '';
-  li.append(createDecorativeMedia(iconText));
+  const iconText = iconRow ? iconRow.textContent.trim() : '';
+  item.append(createMedia(iconText));
 
   const body = document.createElement('div');
   body.className = 'b-cards-card-body';
 
-  const textWrapper = document.createElement('div');
-  textWrapper.className = 'b-cards-card-text';
+  if (titleRow) {
+    const title = titleRow.querySelector('p, h1, h2, h3, h4, h5, h6');
+    if (title) {
+      title.classList.add('b-cards-card-title');
+      body.append(title);
+    }
+  }
 
-  if (categoryCell) {
-    const category = categoryCell.querySelector('p');
+  if (categoryRow) {
+    const category = categoryRow.querySelector('p');
     if (category) {
       category.classList.add('b-cards-card-category');
-      textWrapper.append(category);
+      body.append(category);
     }
   }
 
-  if (contentCell) {
-    while (contentCell.firstElementChild) {
-      textWrapper.append(contentCell.firstElementChild);
+  if (textRow) {
+    const description = document.createElement('div');
+    description.className = 'b-cards-card-description';
+    while (textRow.firstElementChild) {
+      description.append(textRow.firstElementChild);
+    }
+    body.append(description);
+  }
+
+  if (ctaRow) {
+    const link = enhanceLink(ctaRow.querySelector('a'), 'b-cards-card-link');
+    if (link) {
+      const action = document.createElement('div');
+      action.className = 'b-cards-card-cta';
+      action.append(link);
+      body.append(action);
     }
   }
 
-  const paragraphs = [...textWrapper.querySelectorAll('p')].filter((paragraph) => !paragraph.classList.contains('b-cards-card-category'));
-  if (paragraphs[0]) paragraphs[0].classList.add('b-cards-card-title');
-  if (paragraphs[1]) paragraphs[1].classList.add('b-cards-card-description');
-
-  body.append(textWrapper);
-
-  if (ctaCell) {
-    ctaCell.className = 'b-cards-card-cta';
-    const link = ctaCell.querySelector('a');
-    if (link) link.classList.add('b-cards-card-link');
-    body.append(ctaCell);
-  }
-
-  li.append(body);
-  return li;
+  item.append(body);
+  return item;
 }
 
 export default function decorate(block) {
   const rows = [...block.children];
-  const headerRows = rows.slice(0, 3);
-  const itemRows = rows.slice(3);
-
-  const headerSource = document.createElement('div');
-  headerRows.forEach((row) => headerSource.append(row));
-  const header = createHeader(headerSource);
+  const header = createHeader(rows.slice(0, 3));
+  const items = rows.slice(3);
 
   const list = document.createElement('ul');
-  itemRows.forEach((row) => list.append(decorateCard(row)));
+  items.forEach((row) => list.append(decorateCard(row)));
 
   block.textContent = '';
   if (header) block.append(header);
