@@ -1,8 +1,9 @@
-function createButton(link) {
+function createButton(link, variant) {
   if (!link) return null;
 
-  link.classList.add('button');
-  return link.closest('p') || link;
+  const wrapper = link.closest('p') || link;
+  link.classList.add('button', variant);
+  return wrapper;
 }
 
 export default function decorate(block) {
@@ -13,17 +14,13 @@ export default function decorate(block) {
   contentRow.classList.add('hero-banner-content');
 
   const heading = contentRow.querySelector('h1, h2, h3, h4, h5, h6');
-  if (heading) {
-    heading.classList.add('hero-banner-title');
-  }
+  if (heading) heading.classList.add('hero-banner-title');
 
   const paragraphs = [...contentRow.querySelectorAll('p')];
   const buttonWrappers = paragraphs.filter((paragraph) => paragraph.querySelector('a'));
   const bodyParagraphs = paragraphs.filter((paragraph) => !paragraph.querySelector('a'));
 
-  if (bodyParagraphs[0]) {
-    bodyParagraphs[0].classList.add('hero-banner-copy');
-  }
+  if (bodyParagraphs[0]) bodyParagraphs[0].classList.add('hero-banner-copy');
 
   if (buttonWrappers.length) {
     const actions = document.createElement('div');
@@ -31,16 +28,8 @@ export default function decorate(block) {
 
     buttonWrappers.forEach((wrapper, index) => {
       const link = wrapper.querySelector('a');
-      const button = createButton(link);
-
-      if (button) {
-        const anchor = button.matches('a') ? button : button.querySelector('a');
-        if (anchor) {
-          anchor.classList.add(index === 0 ? 'primary' : 'secondary');
-        }
-
-        actions.append(button);
-      }
+      const button = createButton(link, index === 0 ? 'primary' : 'secondary');
+      if (button) actions.append(button);
     });
 
     contentRow.append(actions);
