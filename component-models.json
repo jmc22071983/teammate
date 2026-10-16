@@ -467,17 +467,10 @@
         "value": ""
       },
       {
-        "component": "text",
-        "name": "content_title",
+        "component": "richtext",
+        "name": "content_text",
         "value": "",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "content_subtitle",
-        "value": "",
-        "label": "Subtitle",
+        "label": "Text",
         "valueType": "string"
       },
       {
@@ -520,14 +513,7 @@
         "value": ""
       },
       {
-        "component": "text",
-        "name": "content_title",
-        "value": "",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
+        "component": "richtext",
         "name": "content_text",
         "value": "",
         "label": "Text",

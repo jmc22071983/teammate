@@ -1,15 +1,19 @@
-function createButton(href, text, variant) {
+function createButton(link, variant) {
+  if (!link) return null;
+
+  const href = link.getAttribute('href');
+  const text = link.textContent.trim();
   if (!href || !text) return null;
 
   const wrapper = document.createElement('p');
   wrapper.className = 'button-wrapper';
 
-  const link = document.createElement('a');
-  link.href = href;
-  link.className = `button ${variant}`;
-  link.textContent = text;
+  const anchor = document.createElement('a');
+  anchor.href = href;
+  anchor.className = `button ${variant}`;
+  anchor.textContent = text;
 
-  wrapper.append(link);
+  wrapper.append(anchor);
   return wrapper;
 }
 
@@ -18,6 +22,17 @@ export default function decorate(block) {
 
   if (imageRow) {
     imageRow.classList.add('hero-footer-image');
+
+    const picture = imageRow.querySelector('picture');
+    const image = picture ? picture.querySelector('img') : null;
+
+    if (image) {
+      block.style.backgroundImage = `linear-gradient(90deg, rgb(18 7 31 / 92%) 0%, rgb(18 7 31 / 35%) 100%), url('${image.currentSrc || image.src}')`;
+      block.style.backgroundPosition = 'center';
+      block.style.backgroundRepeat = 'no-repeat';
+      block.style.backgroundSize = 'cover';
+      block.setAttribute('aria-label', image.alt || '');
+    }
   }
 
   if (!contentRow) return;
@@ -25,21 +40,18 @@ export default function decorate(block) {
   contentRow.classList.add('hero-footer-content');
 
   const contentChildren = [...contentRow.children];
-  const titleRow = contentChildren[0];
-  const bodyRow = contentChildren[1];
-  const primaryRow = contentChildren[2];
-  const secondaryRow = contentChildren[3];
+  const textRow = contentChildren[0];
+  const primaryRow = contentChildren[1];
+  const secondaryRow = contentChildren[2];
 
-  if (titleRow) {
-    titleRow.classList.add('hero-footer-title-row');
-    const heading = titleRow.querySelector('h1, h2, h3, h4, h5, h6, p');
+  if (textRow) {
+    textRow.classList.add('hero-footer-text');
+
+    const heading = textRow.querySelector('h1, h2, h3, h4, h5, h6');
     if (heading) heading.classList.add('hero-footer-title');
-  }
 
-  if (bodyRow) {
-    bodyRow.classList.add('hero-footer-body-row');
-    const body = bodyRow.querySelector('p, h1, h2, h3, h4, h5, h6');
-    if (body) body.classList.add('hero-footer-body');
+    const paragraphs = [...textRow.querySelectorAll('p')];
+    if (paragraphs[0]) paragraphs[0].classList.add('hero-footer-copy');
   }
 
   const primaryLink = primaryRow ? primaryRow.querySelector('a') : null;
@@ -48,19 +60,12 @@ export default function decorate(block) {
   const actions = document.createElement('div');
   actions.className = 'hero-footer-actions';
 
-  const primaryButton = createButton(
-    primaryLink ? primaryLink.href : '',
-    primaryLink ? primaryLink.textContent.trim() : '',
-    'primary',
-  );
-  const secondaryButton = createButton(
-    secondaryLink ? secondaryLink.href : '',
-    secondaryLink ? secondaryLink.textContent.trim() : '',
-    'secondary',
-  );
+  const primaryButton = createButton(primaryLink, 'primary');
+  const secondaryButton = createButton(secondaryLink, 'secondary');
 
   if (primaryButton) actions.append(primaryButton);
   if (secondaryButton) actions.append(secondaryButton);
+
   if (actions.children.length) contentRow.append(actions);
 
   if (primaryRow) primaryRow.remove();

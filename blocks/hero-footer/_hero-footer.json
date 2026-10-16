@@ -35,14 +35,7 @@
           "value": ""
         },
         {
-          "component": "text",
-          "name": "content_title",
-          "value": "",
-          "label": "Title",
-          "valueType": "string"
-        },
-        {
-          "component": "text",
+          "component": "richtext",
           "name": "content_text",
           "value": "",
           "label": "Text",
