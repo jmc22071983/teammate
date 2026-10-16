@@ -1,3 +1,5 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 function createArrow() {
   const arrow = document.createElement('span');
   arrow.className = 'b-cards-arrow';
@@ -75,6 +77,7 @@ function decorateCard(row) {
   const [iconRow, titleRow, categoryRow, textRow, ctaRow] = [...row.children];
   const item = document.createElement('li');
   item.className = 'b-cards-item';
+  moveInstrumentation(row, item);
 
   const iconText = iconRow ? iconRow.textContent.trim() : '';
   item.append(createMedia(iconText));
