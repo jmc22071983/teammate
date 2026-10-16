@@ -99,7 +99,7 @@
           }
         },
         {
-          "title": "b-cards",
+          "title": "b-card-item",
           "id": "b-card-item",
           "plugins": {
             "xwalk": {

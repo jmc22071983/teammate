@@ -145,10 +145,17 @@
     "id": "b-cards",
     "fields": [
       {
-        "component": "richtext",
-        "name": "header_text",
+        "component": "text",
+        "name": "header_title",
         "value": "",
-        "label": "Header Text",
+        "label": "Header Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "header_subtitle",
+        "value": "",
+        "label": "Header Subtitle",
         "valueType": "string"
       },
       {
@@ -167,18 +174,18 @@
     "id": "b-card-item",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "component": "text",
+        "name": "media_icon",
+        "value": "",
+        "label": "Decorative Icon",
+        "valueType": "string"
       },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "value": ""
+        "name": "content_category",
+        "value": "",
+        "label": "Category",
+        "valueType": "string"
       },
       {
         "component": "richtext",

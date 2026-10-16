@@ -27,12 +27,7 @@
   flex: 1 1 720px;
 }
 
-.b-cards .b-cards-header-copy h1,
-.b-cards .b-cards-header-copy h2,
-.b-cards .b-cards-header-copy h3,
-.b-cards .b-cards-header-copy h4,
-.b-cards .b-cards-header-copy h5,
-.b-cards .b-cards-header-copy h6 {
+.b-cards .b-cards-header-title {
   margin: 0;
   color: #fff;
   font-family: Poppins, var(--body-font-family);
@@ -42,7 +37,7 @@
   letter-spacing: 1px;
 }
 
-.b-cards .b-cards-header-copy p {
+.b-cards .b-cards-header-subtitle {
   margin: 12px 0 0;
   color: #c9b6e8;
   font-family: Poppins, var(--body-font-family);
@@ -64,12 +59,16 @@
   line-height: 24px;
 }
 
-.b-cards .b-cards-header-link::after {
-  content: '';
-  display: block;
+.b-cards .b-cards-header-link::after,
+.b-cards .b-cards-card-link::after {
+  content: '→';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
-  background: url('/content/dam/teammate/cards-arrow.png') center / contain no-repeat;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .b-cards > ul {
@@ -89,18 +88,32 @@
 }
 
 .b-cards .b-cards-card-image {
-  line-height: 0;
+  padding: 0;
 }
 
-.b-cards .b-cards-card-image picture,
-.b-cards .b-cards-card-image img {
-  display: block;
-  width: 100%;
-}
-
-.b-cards .b-cards-card-image img {
+.b-cards .b-cards-card-image-surface {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  padding: 16px;
+  background: linear-gradient(135deg, #ff7a00 0%, #7a2b00 60%, #120720 100%);
+}
+
+.b-cards .b-cards-card-image-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 12px;
+  padding: 8px 12px;
+  color: #fff;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .b-cards .b-cards-card-body {
@@ -114,6 +127,22 @@
   margin: 0;
 }
 
+.b-cards .b-cards-card-category {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: 8px;
+  border: 1px solid #f4edff;
+  border-radius: 999px;
+  padding: 2px 10px;
+  color: #fff;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .b-cards .b-cards-card-title {
   color: #fff;
   font-family: Poppins, var(--body-font-family);
@@ -125,15 +154,6 @@
 
 .b-cards .b-cards-card-title strong {
   font-weight: 400;
-}
-
-.b-cards .b-cards-card-title::after {
-  content: '';
-  display: block;
-  width: 64px;
-  height: 16px;
-  margin-top: 8px;
-  background: url('/content/dam/teammate/cards-category.png') left center / contain no-repeat;
 }
 
 .b-cards .b-cards-card-description {
@@ -160,14 +180,6 @@
   line-height: 24px;
 }
 
-.b-cards .b-cards-card-link::after {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: url('/content/dam/teammate/cards-arrow.png') center / contain no-repeat;
-}
-
 @media (width <= 1200px) {
   .b-cards > ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -179,12 +191,7 @@
     padding: 64px 24px;
   }
 
-  .b-cards .b-cards-header-copy h1,
-  .b-cards .b-cards-header-copy h2,
-  .b-cards .b-cards-header-copy h3,
-  .b-cards .b-cards-header-copy h4,
-  .b-cards .b-cards-header-copy h5,
-  .b-cards .b-cards-header-copy h6 {
+  .b-cards .b-cards-header-title {
     font-size: 32px;
     line-height: 1.3;
   }
