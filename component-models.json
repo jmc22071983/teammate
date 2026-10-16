@@ -148,8 +148,7 @@
         "component": "text",
         "name": "header_title",
         "value": "",
-        "label": "Header Title"
-        ,
+        "label": "Header Title",
         "valueType": "string"
       },
       {
@@ -176,9 +175,16 @@
     "fields": [
       {
         "component": "text",
-        "name": "media_icon",
+        "name": "content_icon",
         "value": "",
         "label": "Decorative Icon",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "content_title",
+        "value": "",
+        "label": "Title",
         "valueType": "string"
       },
       {
