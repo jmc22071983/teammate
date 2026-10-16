@@ -1,5 +1,20 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+function createDecorativeMedia(iconText) {
+  const media = document.createElement('div');
+  media.className = 'b-cards-card-image';
+
+  const surface = document.createElement('div');
+  surface.className = 'b-cards-card-image-surface';
+
+  if (iconText) {
+    const icon = document.createElement('span');
+    icon.className = 'b-cards-card-image-icon';
+    icon.textContent = iconText;
+    surface.append(icon);
+  }
+
+  media.append(surface);
+  return media;
+}
 
 function createHeader(block) {
   const [titleRow, subtitleRow, ctaRow] = [...block.children];
@@ -44,45 +59,41 @@ function createHeader(block) {
 function decorateCard(row) {
   const li = document.createElement('li');
   li.className = 'b-cards-item';
-  moveInstrumentation(row, li);
 
-  while (row.firstElementChild) {
-    li.append(row.firstElementChild);
-  }
-
-  const cells = [...li.children];
-  const imageCell = cells[0];
+  const cells = [...row.children];
+  const mediaCell = cells[0];
   const categoryCell = cells[1];
   const contentCell = cells[2];
   const ctaCell = cells[3];
 
-  if (imageCell) imageCell.className = 'b-cards-card-image';
+  const iconText = mediaCell ? mediaCell.textContent.trim() : '';
+  li.append(createDecorativeMedia(iconText));
 
   const body = document.createElement('div');
   body.className = 'b-cards-card-body';
 
-  if (contentCell) {
-    const textWrapper = document.createElement('div');
-    textWrapper.className = 'b-cards-card-text';
+  const textWrapper = document.createElement('div');
+  textWrapper.className = 'b-cards-card-text';
 
-    if (categoryCell) {
-      const category = categoryCell.querySelector('p');
-      if (category) {
-        category.classList.add('b-cards-card-category');
-        textWrapper.append(category);
-      }
+  if (categoryCell) {
+    const category = categoryCell.querySelector('p');
+    if (category) {
+      category.classList.add('b-cards-card-category');
+      textWrapper.append(category);
     }
+  }
 
+  if (contentCell) {
     while (contentCell.firstElementChild) {
       textWrapper.append(contentCell.firstElementChild);
     }
-
-    const paragraphs = [...textWrapper.querySelectorAll('p')].filter((paragraph) => !paragraph.classList.contains('b-cards-card-category'));
-    if (paragraphs[0]) paragraphs[0].classList.add('b-cards-card-title');
-    if (paragraphs[1]) paragraphs[1].classList.add('b-cards-card-description');
-
-    body.append(textWrapper);
   }
+
+  const paragraphs = [...textWrapper.querySelectorAll('p')].filter((paragraph) => !paragraph.classList.contains('b-cards-card-category'));
+  if (paragraphs[0]) paragraphs[0].classList.add('b-cards-card-title');
+  if (paragraphs[1]) paragraphs[1].classList.add('b-cards-card-description');
+
+  body.append(textWrapper);
 
   if (ctaCell) {
     ctaCell.className = 'b-cards-card-cta';
@@ -91,8 +102,6 @@ function decorateCard(row) {
     body.append(ctaCell);
   }
 
-  if (contentCell) contentCell.remove();
-  if (categoryCell) categoryCell.remove();
   li.append(body);
   return li;
 }
@@ -108,12 +117,6 @@ export default function decorate(block) {
 
   const list = document.createElement('ul');
   itemRows.forEach((row) => list.append(decorateCard(row)));
-
-  list.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
-    img.closest('picture').replaceWith(optimizedPic);
-  });
 
   block.textContent = '';
   if (header) block.append(header);

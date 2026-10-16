@@ -148,7 +148,8 @@
         "component": "text",
         "name": "header_title",
         "value": "",
-        "label": "Header Title",
+        "label": "Header Title"
+        ,
         "valueType": "string"
       },
       {
@@ -174,18 +175,11 @@
     "id": "b-card-item",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
         "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "value": ""
+        "name": "media_icon",
+        "value": "",
+        "label": "Decorative Icon",
+        "valueType": "string"
       },
       {
         "component": "text",
