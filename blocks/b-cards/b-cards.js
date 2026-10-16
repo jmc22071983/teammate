@@ -14,9 +14,20 @@ function enhanceLink(link, className) {
   return link;
 }
 
-function createHeader(rows) {
-  const [titleRow, subtitleRow, ctaRow] = rows;
-  if (!titleRow && !subtitleRow && !ctaRow) return null;
+// A Crosswalk component instance (header or card) is authored as ONE row whose single
+// child div holds all its filled-in fields as sibling elements (empty fields produce no
+// element at all), so fields must be classified by content, not by a fixed position.
+function fieldsOf(row) {
+  if (!row) return [];
+  const wrapper = row.children[0] || row;
+  return [...wrapper.children];
+}
+
+function createHeader(row) {
+  const fields = fieldsOf(row);
+  const ctaField = fields.find((el) => el.querySelector('a'));
+  const [titleField, subtitleField] = fields.filter((el) => el !== ctaField);
+  if (!titleField && !subtitleField && !ctaField) return null;
 
   const header = document.createElement('div');
   header.className = 'b-cards-header';
@@ -24,26 +35,20 @@ function createHeader(rows) {
   const copy = document.createElement('div');
   copy.className = 'b-cards-header-copy';
 
-  if (titleRow) {
-    const title = titleRow.querySelector('h1, h2, h3, h4, h5, h6, p');
-    if (title) {
-      title.classList.add('b-cards-header-title');
-      copy.append(title);
-    }
+  if (titleField) {
+    titleField.classList.add('b-cards-header-title');
+    copy.append(titleField);
   }
 
-  if (subtitleRow) {
-    const subtitle = subtitleRow.querySelector('p');
-    if (subtitle) {
-      subtitle.classList.add('b-cards-header-subtitle');
-      copy.append(subtitle);
-    }
+  if (subtitleField) {
+    subtitleField.classList.add('b-cards-header-subtitle');
+    copy.append(subtitleField);
   }
 
   header.append(copy);
 
-  if (ctaRow) {
-    const link = enhanceLink(ctaRow.querySelector('a'), 'b-cards-header-link');
+  if (ctaField) {
+    const link = enhanceLink(ctaField.querySelector('a'), 'b-cards-header-link');
     if (link) {
       const action = document.createElement('div');
       action.className = 'b-cards-header-action';
@@ -81,45 +86,45 @@ function createMedia(iconText, imageSrc, imageAlt) {
 }
 
 function decorateCard(row) {
-  const [iconRow, imageRow, , titleRow, categoryRow, textRow, ctaRow] = [...row.children];
   const item = document.createElement('li');
   item.className = 'b-cards-item';
   moveInstrumentation(row, item);
 
-  const iconText = iconRow ? iconRow.textContent.trim() : '';
-  const image = imageRow ? imageRow.querySelector('picture img') : null;
+  const fields = fieldsOf(row);
+  const imageField = fields.find((el) => el.querySelector('picture, img'));
+  const ctaField = fields.find((el) => el !== imageField && el.querySelector('a'));
+  const [iconField, titleField, categoryField, ...textFields] = fields.filter(
+    (el) => el !== imageField && el !== ctaField,
+  );
+
+  const image = imageField ? imageField.querySelector('img') : null;
+  const iconText = iconField ? iconField.textContent.trim() : '';
   item.append(createMedia(iconText, image ? image.src : '', image ? image.alt : ''));
 
   const body = document.createElement('div');
   body.className = 'b-cards-card-body';
 
-  if (titleRow) {
-    const title = titleRow.querySelector('p, h1, h2, h3, h4, h5, h6');
-    if (title) {
-      title.classList.add('b-cards-card-title');
-      body.append(title);
-    }
+  if (titleField) {
+    titleField.classList.add('b-cards-card-title');
+    body.append(titleField);
   }
 
-  if (categoryRow) {
-    const category = categoryRow.querySelector('p');
-    if (category) {
-      category.classList.add('b-cards-card-category');
-      body.append(category);
-    }
+  if (categoryField) {
+    categoryField.classList.add('b-cards-card-category');
+    body.append(categoryField);
   }
 
-  if (textRow) {
+  if (textFields.length) {
     const description = document.createElement('div');
     description.className = 'b-cards-card-description';
-    while (textRow.firstElementChild) {
-      description.append(textRow.firstElementChild);
-    }
+    textFields.forEach((field) => {
+      while (field.firstChild) description.append(field.firstChild);
+    });
     body.append(description);
   }
 
-  if (ctaRow) {
-    const link = enhanceLink(ctaRow.querySelector('a'), 'b-cards-card-link');
+  if (ctaField) {
+    const link = enhanceLink(ctaField.querySelector('a'), 'b-cards-card-link');
     if (link) {
       const action = document.createElement('div');
       action.className = 'b-cards-card-cta';
@@ -134,11 +139,11 @@ function decorateCard(row) {
 
 export default function decorate(block) {
   const rows = [...block.children];
-  const header = createHeader(rows.slice(0, 3));
-  const items = rows.slice(3);
+  const [headerRow, ...itemRows] = rows;
+  const header = createHeader(headerRow);
 
   const list = document.createElement('ul');
-  items.forEach((row) => list.append(decorateCard(row)));
+  itemRows.forEach((row) => list.append(decorateCard(row)));
 
   block.textContent = '';
   if (header) block.append(header);
