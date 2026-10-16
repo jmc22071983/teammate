@@ -2,8 +2,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function createHeader(block) {
-  const [eyebrowRow, titleRow, ctaRow] = [...block.children];
-  if (!eyebrowRow && !titleRow && !ctaRow) return null;
+  const [titleRow, subtitleRow, ctaRow] = [...block.children];
+  if (!titleRow && !subtitleRow && !ctaRow) return null;
 
   const header = document.createElement('div');
   header.className = 'b-cards-header';
@@ -19,11 +19,11 @@ function createHeader(block) {
     }
   }
 
-  if (eyebrowRow) {
-    const eyebrow = eyebrowRow.querySelector('p');
-    if (eyebrow) {
-      eyebrow.classList.add('b-cards-header-eyebrow');
-      copy.append(eyebrow);
+  if (subtitleRow) {
+    const subtitle = subtitleRow.querySelector('p');
+    if (subtitle) {
+      subtitle.classList.add('b-cards-header-subtitle');
+      copy.append(subtitle);
     }
   }
 
@@ -52,8 +52,9 @@ function decorateCard(row) {
 
   const cells = [...li.children];
   const imageCell = cells[0];
-  const contentCell = cells[1];
-  const ctaCell = cells[2];
+  const categoryCell = cells[1];
+  const contentCell = cells[2];
+  const ctaCell = cells[3];
 
   if (imageCell) imageCell.className = 'b-cards-card-image';
 
@@ -63,11 +64,20 @@ function decorateCard(row) {
   if (contentCell) {
     const textWrapper = document.createElement('div');
     textWrapper.className = 'b-cards-card-text';
+
+    if (categoryCell) {
+      const category = categoryCell.querySelector('p');
+      if (category) {
+        category.classList.add('b-cards-card-category');
+        textWrapper.append(category);
+      }
+    }
+
     while (contentCell.firstElementChild) {
       textWrapper.append(contentCell.firstElementChild);
     }
 
-    const paragraphs = [...textWrapper.querySelectorAll('p')];
+    const paragraphs = [...textWrapper.querySelectorAll('p')].filter((paragraph) => !paragraph.classList.contains('b-cards-card-category'));
     if (paragraphs[0]) paragraphs[0].classList.add('b-cards-card-title');
     if (paragraphs[1]) paragraphs[1].classList.add('b-cards-card-description');
 
@@ -82,6 +92,7 @@ function decorateCard(row) {
   }
 
   if (contentCell) contentCell.remove();
+  if (categoryCell) categoryCell.remove();
   li.append(body);
   return li;
 }

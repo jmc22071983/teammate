@@ -38,16 +38,16 @@
       "fields": [
         {
           "component": "text",
-          "name": "header_eyebrow",
+          "name": "header_title",
           "value": "",
-          "label": "Header Eyebrow",
+          "label": "Header Title",
           "valueType": "string"
         },
         {
           "component": "text",
-          "name": "header_title",
+          "name": "header_subtitle",
           "value": "",
-          "label": "Header Title",
+          "label": "Header Subtitle",
           "valueType": "string"
         },
         {
@@ -78,6 +78,13 @@
           "name": "imageAlt",
           "label": "Image Alt",
           "value": ""
+        },
+        {
+          "component": "text",
+          "name": "content_category",
+          "value": "",
+          "label": "Category",
+          "valueType": "string"
         },
         {
           "component": "richtext",
