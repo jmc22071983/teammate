@@ -60,18 +60,16 @@ function createHeader(row) {
   return header;
 }
 
-function createMedia(iconText, imageSrc, imageAlt) {
+function createMedia(iconText, image) {
   const media = document.createElement('div');
   media.className = 'b-cards-card-media';
 
   const surface = document.createElement('div');
   surface.className = 'b-cards-card-media-surface';
 
-  if (imageSrc) {
-    const image = document.createElement('img');
+  if (image) {
+    // reuse the original <img> (not a clone) so it keeps its UE authoring instrumentation
     image.className = 'b-cards-card-media-image';
-    image.src = imageSrc;
-    image.alt = imageAlt || '';
     image.loading = 'lazy';
     surface.append(image);
   } else if (iconText) {
@@ -99,7 +97,7 @@ function decorateCard(row) {
 
   const image = imageField ? imageField.querySelector('img') : null;
   const iconText = iconField ? iconField.textContent.trim() : '';
-  item.append(createMedia(iconText, image ? image.src : '', image ? image.alt : ''));
+  item.append(createMedia(iconText, image));
 
   const body = document.createElement('div');
   body.className = 'b-cards-card-body';
