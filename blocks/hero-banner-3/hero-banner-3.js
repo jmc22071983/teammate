@@ -8,7 +8,7 @@ function createButton(link, variant) {
   button.href = link.href;
   button.textContent = link.textContent.trim();
   button.title = link.title || link.textContent.trim();
-  button.className = `button ${variant}`;
+  button.classList.add('button', variant);
 
   wrapper.append(button);
   return wrapper;
@@ -52,11 +52,8 @@ export default function decorate(block) {
       const primaryButton = createButton(links[0], 'primary');
       if (primaryButton) actions.append(primaryButton);
 
-      const secondaryLink = links[1];
-      if (secondaryLink) {
-        secondaryLink.classList.add('hero-banner-3-secondary-link');
-        actions.append(secondaryLink);
-      }
+      const secondaryButton = createButton(links[1], 'secondary');
+      if (secondaryButton) actions.append(secondaryButton);
 
       contentRow.append(actions);
     }

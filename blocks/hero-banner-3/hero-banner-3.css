@@ -105,40 +105,8 @@
   margin: 0;
 }
 
-.hero-banner-3 .hero-banner-3-actions .button.primary {
-  min-height: 48px;
-  padding: 12px 20px;
-  border: 1px solid #ff7a00;
-  border-radius: 999px;
-  background-color: #ff7a00;
-  color: #120720;
-  font-family: Poppins, var(--body-font-family);
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 24px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
-}
-
-.hero-banner-3 .hero-banner-3-actions .button.primary:hover,
-.hero-banner-3 .hero-banner-3-actions .button.primary:focus-visible {
-  border-color: #b53a00;
-  background-color: #b53a00;
-  color: #fff;
-}
-
-.hero-banner-3 .hero-banner-3-secondary-link {
-  color: #fff;
-  font-family: Poppins, var(--body-font-family);
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 24px;
-  text-decoration: none;
-}
-
-.hero-banner-3 .hero-banner-3-secondary-link:hover,
-.hero-banner-3 .hero-banner-3-secondary-link:focus-visible {
-  color: #fff;
-  text-decoration: underline;
+.hero-banner-3 .hero-banner-3-actions .button {
+  width: auto;
 }
 
 @media (width < 900px) {
@@ -162,7 +130,7 @@
   }
 
   .hero-banner-3 .hero-banner-3-actions .button-wrapper,
-  .hero-banner-3 .hero-banner-3-actions .button.primary {
+  .hero-banner-3 .hero-banner-3-actions .button {
     width: 100%;
   }
 }
