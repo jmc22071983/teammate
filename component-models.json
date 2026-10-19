@@ -174,13 +174,6 @@
     "id": "b-card-item",
     "fields": [
       {
-        "component": "text",
-        "name": "content_icon",
-        "value": "",
-        "label": "Decorative Icon",
-        "valueType": "string"
-      },
-      {
         "component": "reference",
         "valueType": "string",
         "name": "content_image",
@@ -497,6 +490,52 @@
   },
   {
     "id": "hero-banner-2",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content_text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "content_cta",
+        "label": "Primary CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "content_ctaText",
+        "label": "Primary CTA Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "content_secondary",
+        "label": "Secondary CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "content_secondaryText",
+        "label": "Secondary CTA Text"
+      }
+    ]
+  },
+  {
+    "id": "hero-banner-3",
     "fields": [
       {
         "component": "reference",
