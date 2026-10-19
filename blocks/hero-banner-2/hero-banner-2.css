@@ -19,7 +19,7 @@
   justify-content: center;
   overflow: hidden;
   min-height: 480px;
-  padding: 80px 24px;
+  padding: 0 24px;
   background-color: #120720;
 }
 
@@ -103,43 +103,6 @@
 
 .hero-banner-2 .hero-banner-2-actions .button-wrapper {
   margin: 0;
-}
-
-.hero-banner-2 .hero-banner-2-actions .button {
-  min-height: 48px;
-  padding: 12px 20px;
-  border-radius: 160px;
-  font-family: Poppins, var(--body-font-family);
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 24px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
-}
-
-.hero-banner-2 .hero-banner-2-actions .button.primary {
-  border-color: #ff7a00;
-  background-color: #ff7a00;
-  color: #120720;
-}
-
-.hero-banner-2 .hero-banner-2-actions .button.primary:hover,
-.hero-banner-2 .hero-banner-2-actions .button.primary:focus-visible {
-  border-color: #b53a00;
-  background-color: #b53a00;
-  color: #fff;
-}
-
-.hero-banner-2 .hero-banner-2-actions .button.secondary {
-  border-color: #fff;
-  background-color: #2a0b4a;
-  color: #fff;
-}
-
-.hero-banner-2 .hero-banner-2-actions .button.secondary:hover,
-.hero-banner-2 .hero-banner-2-actions .button.secondary:focus-visible {
-  border-color: #fff;
-  background-color: rgb(255 255 255 / 12%);
-  color: #fff;
 }
 
 @media (width >= 900px) {
