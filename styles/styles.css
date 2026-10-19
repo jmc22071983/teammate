@@ -232,8 +232,8 @@ button.button.primary:focus-visible {
   color: var(--button-primary-color);
 }
 
-a.button.primary .button__text,
-button.button.primary .button__text {
+a.button.primary .button-text,
+button.button.primary .button-text {
   color: var(--button-primary-color);
 }
 
@@ -291,8 +291,8 @@ button.button.white:focus-visible {
   color: var(--button-white-color);
 }
 
-a.button.white .button__text,
-button.button.white .button__text {
+a.button.white .button-text,
+button.button.white .button-text {
   color: var(--button-white-color);
 }
 

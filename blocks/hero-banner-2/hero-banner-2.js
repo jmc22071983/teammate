@@ -10,7 +10,7 @@ function createButton(link, variant) {
   button.classList.add('button', variant);
 
   const text = document.createElement('span');
-  text.className = 'button__text';
+  text.className = 'button-text';
   text.textContent = link.textContent.trim();
   button.append(text);
 
