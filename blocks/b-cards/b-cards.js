@@ -65,9 +65,13 @@ function decorateCard(row) {
   const fields = fieldsOf(row);
   const imageField = fields.find((el) => el.querySelector('picture, img'));
   const ctaField = fields.find((el) => el !== imageField && el.querySelector('a'));
-  const [titleField, categoryField, ...textFields] = fields.filter((el) => el !== imageField && el !== ctaField);
+  const [titleField, categoryField, ...textFields] = fields.filter(
+    (el) => el !== imageField && el !== ctaField,
+  );
 
-  const image = imageField ? imageField.querySelector('picture') || imageField.querySelector('img') : null;
+  const image = imageField
+    ? imageField.querySelector('picture') || imageField.querySelector('img')
+    : null;
   if (image) {
     const media = document.createElement('div');
     media.className = 'b-cards-card-media-surface';
