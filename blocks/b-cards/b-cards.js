@@ -10,13 +10,9 @@ function createArrow() {
 function enhanceLink(link, className) {
   if (!link) return null;
   link.classList.add(className);
-  link.append(createArrow());
   return link;
 }
 
-// A Crosswalk component instance (header or card) is authored as ONE row whose single
-// child div holds all its filled-in fields as sibling elements (empty fields produce no
-// element at all), so fields must be classified by content, not by a fixed position.
 function fieldsOf(row) {
   if (!row) return [];
   const wrapper = row.children[0] || row;
@@ -50,6 +46,7 @@ function createHeader(row) {
   if (ctaField) {
     const link = enhanceLink(ctaField.querySelector('a'), 'b-cards-header-link');
     if (link) {
+      link.append(createArrow());
       const action = document.createElement('div');
       action.className = 'b-cards-header-action';
       action.append(link);
@@ -60,29 +57,6 @@ function createHeader(row) {
   return header;
 }
 
-function createMedia(iconText, image) {
-  const media = document.createElement('div');
-  media.className = 'b-cards-card-media';
-
-  const surface = document.createElement('div');
-  surface.className = 'b-cards-card-media-surface';
-
-  if (image) {
-    // reuse the original <img> (not a clone) so it keeps its UE authoring instrumentation
-    image.className = 'b-cards-card-media-image';
-    image.loading = 'lazy';
-    surface.append(image);
-  } else if (iconText) {
-    const icon = document.createElement('span');
-    icon.className = 'b-cards-card-media-icon';
-    icon.textContent = iconText;
-    surface.append(icon);
-  }
-
-  media.append(surface);
-  return media;
-}
-
 function decorateCard(row) {
   const item = document.createElement('li');
   item.className = 'b-cards-item';
@@ -91,26 +65,36 @@ function decorateCard(row) {
   const fields = fieldsOf(row);
   const imageField = fields.find((el) => el.querySelector('picture, img'));
   const ctaField = fields.find((el) => el !== imageField && el.querySelector('a'));
-  const [iconField, titleField, categoryField, ...textFields] = fields.filter(
-    (el) => el !== imageField && el !== ctaField,
-  );
+  const [titleField, categoryField, ...textFields] = fields.filter((el) => el !== imageField && el !== ctaField);
 
-  const image = imageField ? imageField.querySelector('img') : null;
-  const iconText = iconField ? iconField.textContent.trim() : '';
-  item.append(createMedia(iconText, image));
+  const image = imageField ? imageField.querySelector('picture') || imageField.querySelector('img') : null;
+  if (image) {
+    const media = document.createElement('div');
+    media.className = 'b-cards-card-media-surface';
+    media.append(image);
+    item.append(media);
+  }
 
   const body = document.createElement('div');
   body.className = 'b-cards-card-body';
 
+  const copy = document.createElement('div');
+  copy.className = 'b-cards-card-copy';
+
+  const header = document.createElement('div');
+  header.className = 'b-cards-card-header';
+
   if (titleField) {
     titleField.classList.add('b-cards-card-title');
-    body.append(titleField);
+    header.append(titleField);
   }
 
   if (categoryField) {
     categoryField.classList.add('b-cards-card-category');
-    body.append(categoryField);
+    header.append(categoryField);
   }
+
+  copy.append(header);
 
   if (textFields.length) {
     const description = document.createElement('div');
@@ -118,11 +102,13 @@ function decorateCard(row) {
     textFields.forEach((field) => {
       while (field.firstChild) description.append(field.firstChild);
     });
-    body.append(description);
+    copy.append(description);
   }
 
+  body.append(copy);
+
   if (ctaField) {
-    const link = enhanceLink(ctaField.querySelector('a'), 'b-cards-card-link');
+    const link = enhanceLink(ctaField.querySelector('a'), 'b-cards-card-button');
     if (link) {
       const action = document.createElement('div');
       action.className = 'b-cards-card-cta';

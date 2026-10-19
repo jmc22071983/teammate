@@ -11,7 +11,7 @@
 .b-cards-container .b-cards-wrapper > .block.b-cards {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 80px;
 }
 
 .b-cards .b-cards-header {
@@ -81,13 +81,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  background: #fff;
-  transform-origin: center;
 }
 
 .b-cards .b-cards-arrow::before {
   width: 14px;
   height: 1.5px;
+  background: #fff;
   transform: translate(-55%, -50%);
 }
 
@@ -96,7 +95,6 @@
   height: 7px;
   border-top: 1.5px solid #fff;
   border-right: 1.5px solid #fff;
-  background: transparent;
   transform: translate(-10%, -50%) rotate(45deg);
 }
 
@@ -104,56 +102,49 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  gap: 16px;
   margin: 0;
   padding: 0;
 }
 
 .b-cards .b-cards-item {
   overflow: hidden;
-  border: 1px solid #f4edff;
+  border: 1px solid #eee;
   border-radius: 12px;
-  background: #120720;
+  background: #1e0f33;
 }
 
 .b-cards .b-cards-card-media-surface {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  padding: 16px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ff7a00 0%, #7a2b00 60%, #120720 100%);
+  border-radius: 12px 12px 0 0;
 }
 
 .b-cards .b-cards-card-media-image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.b-cards .b-cards-card-media-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 48px;
-  min-height: 48px;
-  border: 1px solid rgb(255 255 255 / 24%);
-  border-radius: 12px;
-  padding: 8px 12px;
-  color: #fff;
-  font-family: Poppins, var(--body-font-family);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1;
-}
-
 .b-cards .b-cards-card-body {
   display: flex;
   flex-direction: column;
+  gap: 24px;
+  min-height: 380px;
+  padding: 40px 32px;
+}
+
+.b-cards .b-cards-card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.b-cards .b-cards-card-header {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  padding: 20px 32px 32px;
 }
 
 .b-cards .b-cards-card-body p {
@@ -170,27 +161,22 @@
 }
 
 .b-cards .b-cards-card-category {
-  display: inline-flex;
-  align-self: flex-start;
-  border: 1px solid #f4edff;
-  border-radius: 999px;
-  padding: 2px 10px;
   color: #fff;
   font-family: Poppins, var(--body-font-family);
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 .b-cards .b-cards-card-description {
-  color: #fff;
+  color: #c9b6e8;
   font-family: Poppins, var(--body-font-family);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 25.5px;
-  letter-spacing: 1px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
 }
 
 .b-cards .b-cards-card-description p {
@@ -199,7 +185,32 @@
 
 .b-cards .b-cards-card-cta {
   margin-top: auto;
-  padding-top: 8px;
+}
+
+.b-cards .b-cards-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #ff7a00;
+  border-radius: 999px;
+  padding: 12px 8px;
+  background: #ff7a00;
+  color: #120720;
+  font-family: Poppins, var(--body-font-family);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
+}
+
+.b-cards .b-cards-card-button:hover,
+.b-cards .b-cards-card-button:focus-visible {
+  border-color: #b53a00;
+  background: #b53a00;
+  color: #fff;
 }
 
 @media (width <= 1200px) {
@@ -223,6 +234,7 @@
   }
 
   .b-cards .b-cards-card-body {
-    padding: 20px 24px 24px;
+    min-height: auto;
+    padding: 32px 24px;
   }
 }
