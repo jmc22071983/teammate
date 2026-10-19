@@ -66,8 +66,6 @@
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 80px;
   text-align: center;
   color: #fff;
   filter: drop-shadow(0 3px 46px rgb(0 0 0 / 14%));
@@ -110,19 +108,14 @@
 
 @media (width >= 900px) {
   .hero-banner-5 {
-    padding: 0 80px;
+    padding: 80px;
   }
 }
 
 @media (width < 900px) {
   .hero-banner-5 {
     min-height: 420px;
-    padding: 0 24px;
-  }
-
-  .hero-banner-5 .hero-banner-5-content {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding: 64px 24px;
   }
 
   .hero-banner-5 .hero-banner-5-title {
