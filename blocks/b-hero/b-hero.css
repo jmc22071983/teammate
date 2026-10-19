@@ -114,7 +114,7 @@
 .b-hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
   justify-content: center;
   margin-top: 24px;
 }
@@ -126,11 +126,12 @@
 .b-hero-actions .button {
   min-height: 48px;
   padding: 12px 20px;
-  border-radius: 999px;
+  border-radius: 160px;
   font-family: Poppins, var(--body-font-family);
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
 }
 
 .b-hero-actions .button.primary {
@@ -148,7 +149,7 @@
 
 .b-hero-actions .button.secondary {
   border-color: #fff;
-  background-color: transparent;
+  background-color: #2a0b4a;
   color: #fff;
 }
 
