@@ -18,6 +18,14 @@
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
+  --button-primary-background: #ff7a00;
+  --button-primary-color: #120720;
+  --button-secondary-background: #2a0b4a;
+  --button-secondary-color: #fff;
+  --button-white-background: #fff;
+  --button-white-color: #000;
+  --button-radius: 160px;
+  --button-shadow: 0 2px 6px rgb(0 0 0 / 10%);
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -184,14 +192,17 @@ button.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 48px;
   max-width: 100%;
   margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
-  font-weight: 500;
-  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: var(--button-radius);
+  padding: 12px 20px;
+  box-shadow: var(--button-shadow);
+  font-family: Poppins, var(--body-font-family);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -207,18 +218,23 @@ button.button:disabled {
 
 a.button.primary,
 button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--background-color);
+  border-color: var(--button-primary-background);
+  background-color: var(--button-primary-background);
+  color: var(--button-primary-color);
 }
 
 a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: #e66e00;
+  background-color: #e66e00;
+  color: var(--button-primary-color);
+}
+
+a.button.primary .button-text,
+button.button.primary .button-text {
+  color: var(--button-primary-color);
 }
 
 a.button.primary[aria-disabled="true"],
@@ -234,18 +250,18 @@ button.button.primary:disabled:focus-visible {
 
 a.button.secondary,
 button.button.secondary {
-  border-color: var(--text-color);
-  background-color: transparent;
-  color: var(--text-color);
+  border-color: var(--button-secondary-background);
+  background-color: var(--button-secondary-background);
+  color: var(--button-secondary-color);
 }
 
 a.button.secondary:hover,
 a.button.secondary:focus-visible,
 button.button.secondary:hover,
 button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--light-color);
-  color: var(--dark-color);
+  border-color: #3a1163;
+  background-color: #3a1163;
+  color: var(--button-secondary-color);
 }
 
 a.button.secondary[aria-disabled="true"],
@@ -254,6 +270,38 @@ a.button.secondary[aria-disabled="true"]:focus-visible,
 button.button.secondary:disabled,
 button.button.secondary:disabled:hover,
 button.button.secondary:disabled:focus-visible {
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+a.button.white,
+button.button.white {
+  border-color: var(--button-white-background);
+  background-color: var(--button-white-background);
+  color: var(--button-white-color);
+}
+
+a.button.white:hover,
+a.button.white:focus-visible,
+button.button.white:hover,
+button.button.white:focus-visible {
+  border-color: #e6e6e6;
+  background-color: #e6e6e6;
+  color: var(--button-white-color);
+}
+
+a.button.white .button-text,
+button.button.white .button-text {
+  color: var(--button-white-color);
+}
+
+a.button.white[aria-disabled="true"],
+a.button.white[aria-disabled="true"]:hover,
+a.button.white[aria-disabled="true"]:focus-visible,
+button.button.white:disabled,
+button.button.white:disabled:hover,
+button.button.white:disabled:focus-visible {
   background-color: var(--light-color);
   border-color: var(--light-color);
   color: var(--dark-color);
