@@ -203,7 +203,7 @@ button.button.primary {
   border-color: var(--text-color);
   background-color: var(--text-color);
   color: #12071f;
-  font-family: var(--font-family-Body, Poppins);
+  font-family: var(--body-font-family, Poppins, sans-serif);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
