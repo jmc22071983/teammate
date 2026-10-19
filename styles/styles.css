@@ -199,9 +199,15 @@ button.button:disabled {
 
 a.button.primary,
 button.button.primary {
+  min-width: 50px;
   border-color: var(--text-color);
   background-color: var(--text-color);
-  color: var(--background-color);
+  color: #12071f;
+  font-family: var(--font-family-Body, Poppins);
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 a.button.primary:hover,
@@ -210,7 +216,7 @@ button.button.primary:hover,
 button.button.primary:focus-visible {
   border-color: var(--dark-color);
   background-color: var(--dark-color);
-  color: var(--light-color);
+  color: #12071f;
 }
 
 a.button.primary[aria-disabled="true"],
