@@ -6,9 +6,13 @@ function createButton(link, variant) {
 
   const button = document.createElement('a');
   button.href = link.href;
-  button.textContent = link.textContent.trim();
   button.title = link.title || link.textContent.trim();
-  button.className = `button ${variant}`;
+  button.classList.add('button', variant);
+
+  const text = document.createElement('span');
+  text.className = 'button__text';
+  text.textContent = link.textContent.trim();
+  button.append(text);
 
   wrapper.append(button);
   return wrapper;
