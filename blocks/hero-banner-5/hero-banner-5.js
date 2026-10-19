@@ -20,12 +20,16 @@ function createButton(link, variant) {
 
 export default function decorate(block) {
   const [imageRow, contentRow] = [...block.children];
+  const image = imageRow ? imageRow.querySelector('picture, img') : null;
 
   if (imageRow) {
     imageRow.classList.add('hero-banner-5-background');
   }
 
   if (!contentRow) {
+    if (image) {
+      block.classList.add('has-background-image');
+    }
     return;
   }
 
@@ -51,22 +55,24 @@ export default function decorate(block) {
 
   buttonWrappers.forEach((wrapper) => wrapper.remove());
 
-  if (!links.length) {
-    return;
+  if (links.length) {
+    const actions = document.createElement('div');
+    actions.className = 'hero-banner-5-actions';
+
+    const primaryButton = createButton(links[0], 'primary');
+    if (primaryButton) {
+      actions.append(primaryButton);
+    }
+
+    const secondaryButton = createButton(links[1], 'secondary');
+    if (secondaryButton) {
+      actions.append(secondaryButton);
+    }
+
+    contentRow.append(actions);
   }
 
-  const actions = document.createElement('div');
-  actions.className = 'hero-banner-5-actions';
-
-  const primaryButton = createButton(links[0], 'primary');
-  if (primaryButton) {
-    actions.append(primaryButton);
+  if (image) {
+    block.classList.add('has-background-image');
   }
-
-  const secondaryButton = createButton(links[1], 'secondary');
-  if (secondaryButton) {
-    actions.append(secondaryButton);
-  }
-
-  contentRow.append(actions);
 }
